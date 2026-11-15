@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const TARGETS = "[data-reveal],[data-split],[data-stagger],[data-wipe],[data-count]";
 
@@ -11,6 +12,7 @@ const TARGETS = "[data-reveal],[data-split],[data-stagger],[data-wipe],[data-cou
  *  re-keyed nodes (e.g. a new testimonial). Also drives the magnetic pull on
  *  primary buttons (pointer: fine, motion allowed). */
 export function RevealObserver() {
+  const pathname = usePathname();
   useEffect(() => {
     if (!("IntersectionObserver" in window)) {
       document.documentElement.classList.remove("js");
@@ -33,7 +35,12 @@ export function RevealObserver() {
         el.dataset.observed = "";
         io.observe(el);
       });
-    scan();
+    // Fresh observer per route: forget stale observation flags, then scan
+    // after the route's jump-to-top has landed so each page animates on arrival.
+    document.querySelectorAll<HTMLElement>("[data-observed]:not(.is-in)").forEach((el) => delete el.dataset.observed);
+    let raf = requestAnimationFrame(() => {
+      raf = requestAnimationFrame(scan);
+    });
     const mo = new MutationObserver(scan);
     mo.observe(document.body, { childList: true, subtree: true });
 
@@ -69,11 +76,12 @@ export function RevealObserver() {
     document.addEventListener("pointerleave", reset);
 
     return () => {
+      cancelAnimationFrame(raf);
       io.disconnect();
       mo.disconnect();
       document.removeEventListener("pointermove", onMove);
       document.removeEventListener("pointerleave", reset);
     };
-  }, []);
+  }, [pathname]);
   return null;
 }
