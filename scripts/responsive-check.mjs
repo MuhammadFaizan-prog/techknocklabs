@@ -39,7 +39,7 @@ for (const w of widths) {
       }
       let rot = "";
       const rt = document.querySelector(".rotator");
-      if (rt) { const b = rt.getBoundingClientRect(); const lh = parseFloat(getComputedStyle(rt).height); rot = `rot ${Math.round(b.width)}x${Math.round(b.height)}`; }
+      if (rt) { const b = rt.getBoundingClientRect(); rot = `rot ${Math.round(b.width)}x${Math.round(b.height)}`; }
       return { sw, iw, offenders: offenders.slice(0, 4), small: small.slice(0, 6), rot };
     });
     rows.push({ w, p, overflow: r.sw > r.iw ? `+${r.sw - r.iw}px` : "ok", ...r });
