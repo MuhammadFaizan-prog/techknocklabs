@@ -18,7 +18,7 @@ Review: same room/door/palette ✓, light floods out ✓, no text/people ✓. Ga
 Alt text: both are decorative (`alt=""`) because the headline carries the meaning.
 Superseded: earlier `door-ajar.png` / `door-open.png` (2026-11-12, project root) were replaced by v2 to follow the structured-prompt workflow.
 
-## Blog covers (2026-11-15) → public/img/blog/{ai,product,strategy,saas,engineering}.webp (1376×768, q82, 11-27 KB)
+## Blog covers, first set (2026-11-15, superseded by the per-post covers below; files removed) → public/img/blog/{ai,product,strategy,saas,engineering}.webp (1376×768, q82, 11-27 KB)
 Engine: Hark `generate_image`, one engine for the set, seeds not exposed. Originals: project root `blog-*.png`.
 Style lock (byte-identical in all five): `quiet dark architectural minimalism, single warm practical light source, cinematic film still, fine grain, low-key grade`
 Palette lock (all five): `walls and floor near-black #0A0A0A to charcoal #141414, hairline frame #2B2925, cool grey highlights #8E8B85, the only warm colour is the amber light #E8A24A`
@@ -31,3 +31,8 @@ Shared closing constraint: `The scene contains no text, no lettering, no logos, 
 - **Engineering**: two interlocking machined steel gears, a bearing ring and a threaded shaft on dark concrete inside a thin wedge of amber light from a door gap at the right edge. Low camera, 85mm macro-like.
 
 Review (read at 800px): all five on-palette, amber only as light, no text/people/logos. Strategy original had a thin light border frame; cropped 14/10 px per side and resized back. Accepted on try 1. Alt text: decorative (`alt=""`), the card title carries the meaning.
+
+
+## Per-post blog covers (2026-11-15) → public/img/blog/<post-slug>.webp (18 files, 1376×768, WebP q82)
+One generated cover per article, in the same Door Ajar style and palette locks as the first set. Originals: project root `cover-<slug>.png` (for multi-tenant-saas and saas-pricing-models the `-v2` files). The per-post prompts were not recorded in this repo.
+Processing: six sources with a thin frame (ai-customer-support, ai-intake-law-firms, ai-voice-agents-for-business, engagement-models, model-context-protocol, what-an-mvp-costs) were center-cropped to 1294×722, then resized to 1376×768. All covers are decorative (`alt=""`).
