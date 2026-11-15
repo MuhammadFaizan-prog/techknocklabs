@@ -617,9 +617,10 @@ html.lenis, html.lenis body { height: auto; }
 .mf-a3 { width: 30vw; height: 20vw; left: 34vw; bottom: 4vw; background: rgba(255, 210, 160, 0.10); }
 .mf-band { transform: rotate(-2.2deg); }
 .mf-type {
-  font-size: clamp(64px, 15.5vw, 236px);
+  font-size: clamp(44px, 11.4vw, 170px);
+  white-space: nowrap;
   padding-top: 0.06em;
-  margin-bottom: -0.06em;
+  padding-bottom: 0.08em;
   background: linear-gradient(180deg, rgba(237, 234, 227, 0.95) 0%, rgba(242, 166, 90, 0.55) 55%, rgba(242, 166, 90, 0) 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }

@@ -84,7 +84,7 @@ export function Footer() {
 
         {/* giant masked type: the official company name */}
         <div aria-hidden="true" className="relative overflow-hidden">
-          <p data-mf-type className="mf-type select-none whitespace-nowrap text-center font-medium leading-[0.8] tracking-[-0.06em]">
+          <p data-mf-type className="mf-type select-none whitespace-nowrap text-center font-medium leading-[0.86] tracking-[-0.06em]">
             {BRAND}
           </p>
         </div>
