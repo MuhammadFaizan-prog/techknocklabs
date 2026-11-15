@@ -11,19 +11,23 @@ export function ContainerScroll({ title, children }: { title: ReactNode; childre
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const [mobile, setMobile] = useState(false);
+  const [tablet, setTablet] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
-    const set = () => setMobile(mq.matches);
+    // 768-1279: the card is near full-width, so it must start at or below 1x or its tilted edges get clipped
+    const tq = window.matchMedia("(min-width: 768px) and (max-width: 1279px)");
+    const set = () => { setMobile(mq.matches); setTablet(tq.matches); };
     set();
     mq.addEventListener("change", set);
-    return () => mq.removeEventListener("change", set);
+    tq.addEventListener("change", set);
+    return () => { mq.removeEventListener("change", set); tq.removeEventListener("change", set); };
   }, []);
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const p = useTransform(scrollYProgress, [0.08, 0.5], [0, 1], { clamp: true });
   const rotate = useTransform(p, [0, 1], [mobile ? 14 : 22, 0]);
-  const scale = useTransform(p, [0, 1], mobile ? [0.86, 0.98] : [1.06, 1]);
+  const scale = useTransform(p, [0, 1], mobile ? [0.86, 0.98] : tablet ? [0.88, 1] : [1.03, 1]);
   const lift = useTransform(p, [0, 1], [0, mobile ? -40 : -90]);
   const shadow = useTransform(
     p,

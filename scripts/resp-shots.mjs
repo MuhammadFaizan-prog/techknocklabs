@@ -8,7 +8,7 @@ const settle = async (page) => {
   await page.waitForTimeout(600);
 };
 const grid = (page, sel) => page.evaluate((sel) => {
-  const items = [...document.querySelectorAll(sel + " > li")].map(li => li.getBoundingClientRect());
+  const items = [...document.querySelectorAll(sel + " > li")].map(li => ({ ...li.getBoundingClientRect().toJSON(), top: li.offsetTop }));
   const rows = {}; for (const b of items) { const k = Math.round(b.top); (rows[k] ||= []).push(`${Math.round(b.width)}x${Math.round(b.height)}`); }
   return Object.values(rows).map(r => r.join(" | ")).join("  //  ");
 }, sel);
@@ -21,7 +21,10 @@ for (const w of [360, 390, 768, 1024]) {
   console.log(`${w} services bento rows: ${await grid(page, "ol.bento")}`);
   console.log(`${w} why grid rows:      ${await grid(page, "section[aria-labelledby=ch-05] ol")}`);
   if (w === 390 || w === 768) {
+    await page.addStyleTag({ content: "header{visibility:hidden!important}" });
+    await page.locator("ol.bento").scrollIntoViewIfNeeded(); await page.waitForTimeout(2500);
     await page.locator("ol.bento").screenshot({ path: `${out}/resp-services-${w}.png` });
+    await page.locator("section[aria-labelledby=ch-05] ol").scrollIntoViewIfNeeded(); await page.waitForTimeout(800);
     await page.locator("section[aria-labelledby=ch-05]").screenshot({ path: `${out}/resp-why-${w}.png` });
   }
   if (w === 768 || w === 1024) { await page.evaluate(() => window.scrollTo(0, 0)); await page.waitForTimeout(400); await page.screenshot({ path: `${out}/resp-home-${w}.png`, fullPage: true }); }

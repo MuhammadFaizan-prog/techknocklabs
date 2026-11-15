@@ -303,9 +303,9 @@ export default function Home() {
           <ul data-stagger className="mt-16 border-t border-hairline md:mt-24">
             {resources.map((r) => (
               <li key={r.title} className="group relative grid gap-4 border-b border-hairline py-10 md:grid-cols-12 md:items-center md:gap-8">
-                <h3 className="text-[clamp(28px,3vw,44px)] font-medium leading-[1.1] tracking-[-0.03em] text-bone md:col-span-4 md:col-start-4">{r.title}</h3>
-                <p className="text-[16px] text-muted md:col-span-3">{r.body}</p>
-                <p className="md:col-span-2 md:text-right">
+                <h3 className="text-[clamp(28px,3vw,44px)] font-medium leading-[1.1] tracking-[-0.03em] text-bone md:col-span-5 lg:col-span-4 lg:col-start-4">{r.title}</h3>
+                <p className="text-[16px] text-muted md:col-span-4 lg:col-span-3">{r.body}</p>
+                <p className="md:col-span-3 md:text-right lg:col-span-2">
                   <Link href={r.href} className="link-underline whitespace-nowrap text-[15px] text-bone after:absolute after:inset-0">{r.cta}</Link>
                 </p>
               </li>
