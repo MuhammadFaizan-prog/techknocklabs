@@ -10,24 +10,29 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 export function ContainerScroll({ title, children }: { title: ReactNode; children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
+  const cardRef = useRef<HTMLDivElement>(null);
   const [mobile, setMobile] = useState(false);
-  const [tablet, setTablet] = useState(false);
+  // Start scale for tablet/desktop. The 22deg tilt (perspective 1000px) projects the near edge ~18% wider,
+  // so when the card is close to full-width the start scale must shrink or the edges get clipped by the viewport.
+  const [start, setStart] = useState(1);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
-    // 768-1279: the card is near full-width, so it must start at or below 1x or its tilted edges get clipped
-    const tq = window.matchMedia("(min-width: 768px) and (max-width: 1279px)");
-    const set = () => { setMobile(mq.matches); setTablet(tq.matches); };
+    const set = () => {
+      setMobile(mq.matches);
+      const cw = cardRef.current?.offsetWidth ?? 0;
+      if (cw) setStart(Math.min(1.03, (window.innerWidth - 24) / (cw * 1.18)));
+    };
     set();
     mq.addEventListener("change", set);
-    tq.addEventListener("change", set);
-    return () => { mq.removeEventListener("change", set); tq.removeEventListener("change", set); };
+    window.addEventListener("resize", set);
+    return () => { mq.removeEventListener("change", set); window.removeEventListener("resize", set); };
   }, []);
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const p = useTransform(scrollYProgress, [0.08, 0.5], [0, 1], { clamp: true });
   const rotate = useTransform(p, [0, 1], [mobile ? 14 : 22, 0]);
-  const scale = useTransform(p, [0, 1], mobile ? [0.86, 0.98] : tablet ? [0.88, 1] : [1.03, 1]);
+  const scale = useTransform(p, [0, 1], mobile ? [0.86, 0.98] : [start, 1]);
   const lift = useTransform(p, [0, 1], [0, mobile ? -40 : -90]);
   const shadow = useTransform(
     p,
@@ -43,6 +48,7 @@ export function ContainerScroll({ title, children }: { title: ReactNode; childre
         {title}
       </motion.div>
       <motion.div
+        ref={cardRef}
         style={
           still
             ? undefined
