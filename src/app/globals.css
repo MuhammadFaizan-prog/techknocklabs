@@ -532,3 +532,103 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: clip; }
+
+/* ------------------------------------------------------------------
+   Ship 2 — premium components (see DEVIATIONS.md #17)
+   ------------------------------------------------------------------ */
+
+/* Spotlight card: a cursor-tracked amber light on the border + a quiet inner
+   gradient. Pointer position comes from Reveal.tsx (--px / --py). */
+.spot-card {
+  background-image:
+    radial-gradient(120% 90% at 100% 0%, rgba(242, 166, 90, 0.045), rgba(242, 166, 90, 0) 55%),
+    linear-gradient(180deg, rgba(237, 234, 227, 0.03), rgba(237, 234, 227, 0) 38%);
+  box-shadow: inset 0 1px 0 rgba(237, 234, 227, 0.05);
+  transition: translate 450ms var(--ease-out), border-color 200ms var(--ease-out), box-shadow 450ms var(--ease-out);
+}
+.spot-card::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px;
+  pointer-events: none; z-index: 2; opacity: 0;
+  background: radial-gradient(240px circle at var(--px, 50%) var(--py, 0%),
+    rgba(255, 196, 128, 0.95), rgba(242, 166, 90, 0.35) 38%, rgba(242, 166, 90, 0) 72%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  transition: opacity 350ms var(--ease-out);
+}
+.spot-card .spot-glow {
+  width: 520px; height: 520px; margin: -260px 0 0 -260px;
+  background: radial-gradient(closest-side, rgba(242, 166, 90, 0.14), rgba(242, 166, 90, 0.04) 55%, rgba(242, 166, 90, 0) 75%);
+}
+@media (hover: hover) {
+  .spot-card:hover { border-color: rgba(242, 166, 90, 0.18); }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .spot-card:hover::before { opacity: 1; }
+  .spot-card:hover { box-shadow: inset 0 1px 0 rgba(237, 234, 227, 0.07), 0 24px 60px -28px rgba(242, 166, 90, 0.28), 0 12px 30px -18px rgba(0, 0, 0, 0.8); }
+}
+
+/* Radial orbital timeline */
+.orbit-sweep {
+  background: conic-gradient(from 0deg, rgba(242, 166, 90, 0) 0deg, rgba(242, 166, 90, 0.16) 40deg, rgba(242, 166, 90, 0) 80deg);
+  -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 1.5px), #000 calc(100% - 1px));
+  mask: radial-gradient(closest-side, transparent calc(100% - 1.5px), #000 calc(100% - 1px));
+}
+.orbit-core {
+  background: radial-gradient(circle, rgba(255, 200, 140, 0.95) 0%, rgba(242, 166, 90, 0.85) 32%, rgba(242, 166, 90, 0.15) 62%, rgba(242, 166, 90, 0) 72%);
+  box-shadow: 0 0 80px 24px rgba(242, 166, 90, 0.22), 0 0 160px 60px rgba(242, 166, 90, 0.08);
+}
+.orbit-ping { position: absolute; inset: 0; border-radius: 9999px; border: 1px solid rgba(242, 166, 90, 0.5); opacity: 0; }
+.orbit-node { will-change: transform; outline: none; }
+.orbit-node-dot {
+  background: #0f0f0f; border-color: var(--hairline); color: rgba(237, 234, 227, calc(var(--depth, 1) * 0.9));
+  transition: background-color 400ms var(--ease-out), border-color 400ms var(--ease-out), color 400ms var(--ease-out), box-shadow 400ms var(--ease-out), scale 500ms var(--ease-out);
+}
+.orbit-node-label { color: rgba(237, 234, 227, calc(var(--depth, 1) * 0.75)); transition: color 400ms var(--ease-out); }
+.orbit-node:hover .orbit-node-dot { border-color: rgba(242, 166, 90, 0.6); color: var(--bone); }
+.orbit-node.is-on .orbit-node-dot {
+  background: var(--bone); border-color: var(--bone); color: var(--night); scale: 1.18;
+  box-shadow: 0 0 0 6px rgba(242, 166, 90, 0.12), 0 0 36px 4px rgba(242, 166, 90, 0.45);
+}
+.orbit-node.is-on .orbit-node-label { color: var(--bone); }
+.orbit-node:focus-visible .orbit-node-dot { outline: 2px solid var(--amber); outline-offset: 4px; }
+@media (prefers-reduced-motion: no-preference) {
+  .orbit-ping { animation: orbitPing 2.4s var(--ease-out) infinite; }
+  .orbit-sweep { animation: orbitSpin 9s linear infinite; }
+  .orbit-detail-in { animation: orbitIn 600ms var(--ease-out) both; }
+}
+@keyframes orbitPing { 0% { transform: scale(0.6); opacity: 0.9; } 100% { transform: scale(2.6); opacity: 0; } }
+@keyframes orbitSpin { to { transform: rotate(360deg); } }
+@keyframes orbitIn { from { opacity: 0; transform: translateY(10px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+
+/* Motion footer */
+.mfooter { background: #080808; }
+.mf-grid {
+  background-image:
+    linear-gradient(rgba(237, 234, 227, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(237, 234, 227, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 100%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 100%, #000 20%, transparent 75%);
+}
+.mf-aurora { position: absolute; border-radius: 9999px; filter: blur(90px); opacity: 0.55; will-change: transform; }
+.mf-a1 { width: 46vw; height: 30vw; left: -8vw; bottom: -10vw; background: rgba(242, 166, 90, 0.22); }
+.mf-a2 { width: 38vw; height: 26vw; right: -6vw; bottom: -4vw; background: rgba(214, 120, 60, 0.16); }
+.mf-a3 { width: 30vw; height: 20vw; left: 34vw; bottom: 4vw; background: rgba(255, 210, 160, 0.10); }
+.mf-band { transform: rotate(-2.2deg); }
+.mf-type {
+  font-size: clamp(64px, 15.5vw, 236px);
+  padding-top: 0.06em;
+  margin-bottom: -0.06em;
+  background: linear-gradient(180deg, rgba(237, 234, 227, 0.95) 0%, rgba(242, 166, 90, 0.55) 55%, rgba(242, 166, 90, 0) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.mag { translate: var(--mx, 0) var(--my, 0); transition: border-color 150ms var(--ease-out), translate 400ms var(--ease-out); }
+@media (prefers-reduced-motion: no-preference) {
+  .mf-band-track { animation: mfMarquee 38s linear infinite; }
+  .mf-a1 { animation: mfDrift 16s ease-in-out infinite alternate; }
+  .mf-a2 { animation: mfDrift 19s ease-in-out infinite alternate-reverse; }
+  .mf-a3 { animation: mfDrift 23s ease-in-out infinite alternate; }
+}
+@keyframes mfMarquee { to { transform: translateX(-50%); } }
+@keyframes mfDrift { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(6vw, -3vw, 0) scale(1.15); } }

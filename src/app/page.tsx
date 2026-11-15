@@ -7,6 +7,8 @@ import { FaqList } from "@/components/Faq";
 import { Testimonials } from "@/components/Testimonials";
 import { CountUp } from "@/components/CountUp";
 import { AgentLog, ProcessShowcase } from "@/components/Showcase";
+import { ProcessOrbit } from "@/components/ProcessOrbit";
+import { ContainerScroll } from "@/components/ContainerScroll";
 import {
   BlogCards,
   ClientLogos,
@@ -134,7 +136,7 @@ export default function Home() {
             const big = i === 0;
             const span = ["md:col-span-6 lg:col-span-4 lg:row-span-2", "md:col-span-3 lg:col-span-2", "md:col-span-3 lg:col-span-2", "md:col-span-3", "md:col-span-3"][i];
             return (
-              <li key={s.slug} className={`group spot lift relative flex flex-col overflow-hidden rounded-[14px] border border-hairline bg-surface/70 p-7 hover:border-[#4a4640] md:p-8 ${span}`}>
+              <li key={s.slug} className={`group spot spot-card lift relative flex flex-col overflow-hidden rounded-[14px] border border-hairline bg-surface/70 p-7 hover:border-[#4a4640] md:p-8 ${span}`}>
                 <span aria-hidden="true" className="spot-glow" />
                 <div className="flex items-center justify-between">
                   <p className="label tabular">{String(i + 1).padStart(2, "0")}</p>
@@ -167,31 +169,31 @@ export default function Home() {
           <Chapter id="ch-03" n="03" label="Featured case studies" title="Building products that businesses rely on." />
         </div>
 
-        <div className="door-stage mt-16">
-          <div className="door-sticky">
-            <div className="door-mask">
-              <Image src={clone.image!} alt={`${clone.name} — ${featuredIndustry[clone.slug]}`} fill sizes="100vw" className="object-cover object-top brightness-[0.82]" />
-              <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(0deg,#0a0a0a_0%,#0a0a0a_34%,rgba(10,10,10,0.05)_72%)]" />
-            </div>
-            <div aria-hidden="true" className="door-slit pointer-events-none absolute top-[14%] bottom-0 left-1/2 w-px -translate-x-1/2 bg-amber shadow-[0_0_24px_6px_rgba(242,166,90,0.45)]" />
-            <div className="door-copy relative z-10 mt-auto w-full self-end">
-              <div className="shell grid gap-6 pb-14 md:grid-cols-12 md:pb-20">
-                <div className="md:col-span-7">
-                  <p className="label text-bone/80">{clone.card.category} / {featuredIndustry[clone.slug]}</p>
-                  <h3 className="display-serif mt-4 text-[clamp(72px,10vw,160px)] text-bone">{clone.name}</h3>
-                </div>
-                <div className="flex flex-col justify-end md:col-span-5">
-                  <p className="max-w-[46ch] text-[17px] text-bone/85">{clone.card.summary}</p>
-                  <ul className="mt-5 flex flex-wrap gap-2">
-                    {clone.card.tags.map((t) => (
-                      <li key={t} className="rounded-full border border-bone/25 px-3 py-1 font-mono text-[13px] text-bone/85">{t}</li>
-                    ))}
-                  </ul>
-                  <p className="mt-7">
-                    <Link href={`/work/${clone.slug}`} className="link-underline text-[15px] text-bone">Read case study</Link>
-                  </p>
-                </div>
+        <div className="shell mt-6 md:mt-10">
+          <ContainerScroll
+            title={
+              <div className="text-center">
+                <p className="label text-bone/80">{clone.card.category} / {featuredIndustry[clone.slug]}</p>
+                <h3 className="display-serif mt-4 text-[clamp(64px,10vw,160px)] text-bone">{clone.name}</h3>
               </div>
+            }
+          >
+            <Link href={`/work/${clone.slug}`} tabIndex={-1} aria-hidden="true" className="photo-zoom relative block aspect-[16/10]">
+              <Image src={clone.image!} alt="" fill sizes="(min-width: 1240px) 1180px, 100vw" className="object-cover object-top" />
+              <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(0deg,rgba(10,10,10,0.55)_0%,rgba(10,10,10,0)_40%)]" />
+            </Link>
+          </ContainerScroll>
+          <div data-reveal className="mx-auto grid max-w-[1180px] gap-6 pb-20 md:grid-cols-12 md:pb-28">
+            <p className="max-w-[46ch] text-[17px] text-bone/85 md:col-span-6">{clone.card.summary}</p>
+            <div className="flex flex-col gap-6 md:col-span-6 md:items-end">
+              <ul className="flex flex-wrap gap-2 md:justify-end">
+                {clone.card.tags.map((t) => (
+                  <li key={t} className="rounded-full border border-bone/25 px-3 py-1 font-mono text-[13px] text-bone/85">{t}</li>
+                ))}
+              </ul>
+              <p>
+                <Link href={`/work/${clone.slug}`} className="link-underline text-[15px] text-bone">Read case study</Link>
+              </p>
             </div>
           </div>
         </div>
@@ -250,7 +252,7 @@ export default function Home() {
           <Chapter id="ch-05" n="05" label="Why Techknock Labs" title="Why teams choose Techknock Labs" />
           <ol data-stagger className="mt-16 grid gap-4 md:mt-24 md:grid-cols-6">
             {reasons.map((r, i) => (
-              <li key={r.title} className={`spot lift relative flex flex-col overflow-hidden rounded-[14px] border border-hairline bg-surface/70 p-7 hover:border-[#4a4640] md:p-8 ${["md:col-span-4", "md:col-span-2", "md:col-span-2", "md:col-span-2", "md:col-span-2"][i]}`}>
+              <li key={r.title} className={`spot spot-card lift relative flex flex-col overflow-hidden rounded-[14px] border border-hairline bg-surface/70 p-7 hover:border-[#4a4640] md:p-8 ${["md:col-span-4", "md:col-span-2", "md:col-span-2", "md:col-span-2", "md:col-span-2"][i]}`}>
                 <span aria-hidden="true" className="spot-glow" />
                 <p className="label tabular flex items-center gap-2">{i === 0 ? <span className="pulse-dot" aria-hidden="true" /> : null}{String(i + 1).padStart(2, "0")}</p>
                 <h3 className={`mt-10 font-medium tracking-[-0.02em] text-bone ${i === 0 ? "text-[clamp(30px,3vw,44px)] leading-[1.08]" : "text-[24px] leading-[1.15]"}`}>{r.title}</h3>
@@ -265,7 +267,8 @@ export default function Home() {
       <section aria-labelledby="ch-06" className="border-t border-hairline">
         <div className="shell py-24 md:py-36">
           <Chapter id="ch-06" n="06" label="How we work" title="From first call to launch, in four steps." />
-          <div className="mt-16 md:mt-24"><ProcessRow /></div>
+          <div className="mt-16 hidden md:mt-24 lg:block"><ProcessOrbit /></div>
+          <div className="mt-16 md:mt-24 lg:hidden"><ProcessRow /></div>
         </div>
       </section>
 

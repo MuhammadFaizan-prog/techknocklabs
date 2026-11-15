@@ -62,7 +62,7 @@ export function RevealObserver() {
         card.style.setProperty("--px", `${(ev.clientX - cr.left).toFixed(0)}px`);
         card.style.setProperty("--py", `${(ev.clientY - cr.top).toFixed(0)}px`);
       }
-      const btn = (ev.target as Element | null)?.closest?.<HTMLElement>(".knock") ?? null;
+      const btn = (ev.target as Element | null)?.closest?.<HTMLElement>(".knock, .mag") ?? null;
       if (btn !== active) reset();
       if (!btn) return;
       active = btn;
