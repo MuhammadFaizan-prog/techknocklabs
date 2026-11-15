@@ -106,6 +106,19 @@ p { text-wrap: pretty; }
 }
 .link-quiet:hover, .link-quiet:focus-visible { background-size: 100% 1px; }
 
+/* Touch: give small standalone text links a >=44px hit area without moving layout.
+   Card-cover links (after:absolute inset-0) are left alone so their overlay still spans the card. */
+@media (pointer: coarse) {
+  .link-quiet:not([class*="after:absolute"]), .link-underline:not([class*="after:absolute"]) { position: relative; }
+  .link-quiet:not([class*="after:absolute"])::before, .link-underline:not([class*="after:absolute"])::before {
+    content: ""; position: absolute; inset: -13px -6px;
+  }
+  /* footer link lists: rows become 44px tall so the hit areas don't overlap */
+  .tap-list > li + li { margin-top: 0 !important; }
+  .tap-list > li > a { display: inline-flex; align-items: center; min-height: 44px; background-position: 0 calc(50% + 0.75em); }
+  .tap-list > li > a::before { display: none; }
+}
+
 /* Buttons: one pair — bone pill (primary) + outlined pill (secondary) */
 .btn {
   position: relative;
@@ -128,8 +141,8 @@ p { text-wrap: pretty; }
 .btn-outline {
   border: 1px solid color-mix(in oklab, var(--bone) 40%, transparent);
   color: var(--bone);
-  min-height: 40px;
-  padding: 8px 20px;
+  min-height: 44px;
+  padding: 10px 20px;
   font-size: 14px;
 }
 .btn-outline:hover { border-color: var(--amber); }

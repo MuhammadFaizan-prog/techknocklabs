@@ -7,7 +7,7 @@ const widths = [360, 390, 768, 1024, 1280, 1440];
 const browser = await chromium.launch();
 const rows = [];
 for (const w of widths) {
-  const ctx = await browser.newContext({ viewport: { width: w, height: 900 }, hasTouch: w < 1024, isMobile: w < 768 });
+  const ctx = await browser.newContext({ viewport: { width: w, height: 900 }, hasTouch: w <= 1024, isMobile: w < 768 });
   const page = await ctx.newPage();
   for (const p of pages) {
     await page.goto(base + p, { waitUntil: "networkidle" }).catch(() => {});
@@ -29,7 +29,13 @@ for (const w of widths) {
         if (!b.width || cs.visibility === "hidden" || el.closest("[aria-hidden=true]") || el.classList.contains("sr-only") || cs.position === "absolute" && b.width < 2) continue;
         // inline text links inside paragraphs are exempt (WCAG 2.5.8 inline exception)
         if (cs.display === "inline" && el.closest("p, li p, dd")) continue;
-        if (b.height < 44 && b.width < 44 || b.height < 24) small.push(`${el.tagName.toLowerCase()}"${(el.textContent || el.getAttribute("aria-label") || "").trim().slice(0, 24)}"(${Math.round(b.width)}x${Math.round(b.height)})`);
+        // card-cover links (::after absolute inset-0) are as big as their card
+        const pa = getComputedStyle(el, "::after"); if (pa.content !== "none" && pa.position === "absolute") continue;
+        // on touch, count the ::before hit-area expansion used by text links
+        let hb = b.height, hwid = b.width;
+        if (matchMedia("(pointer: coarse)").matches) { const pb = getComputedStyle(el, "::before"); if (pb.content !== "none" && pb.position === "absolute") { hb -= 2 * parseFloat(pb.top); hwid -= 2 * parseFloat(pb.left); } }
+        if (!matchMedia("(pointer: coarse)").matches) { if (hb < 24 && hwid < 24) small.push(`${el.tagName.toLowerCase()}"${(el.textContent || "").trim().slice(0, 24)}"(${Math.round(hwid)}x${Math.round(hb)})`); continue; }
+        if (hb < 44) small.push(`${el.tagName.toLowerCase()}"${(el.textContent || el.getAttribute("aria-label") || "").trim().slice(0, 24)}"(${Math.round(hwid)}x${Math.round(hb)})`);
       }
       let rot = "";
       const rt = document.querySelector(".rotator");

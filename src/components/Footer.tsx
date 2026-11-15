@@ -47,7 +47,7 @@ export function Footer() {
           </div>
           <div className="md:col-span-3">
             <h2 className="label">Services</h2>
-            <ul className="mt-4 space-y-2.5 text-[15px]">
+            <ul className="tap-list mt-4 space-y-2.5 text-[15px]">
               {services.map((s) => (
                 <li key={s.slug}>
                   <Link className="link-quiet text-bone/85 hover:text-bone" href={`/services/${s.slug}`}>{s.title}</Link>
@@ -57,7 +57,7 @@ export function Footer() {
           </div>
           <div className="md:col-span-2">
             <h2 className="label">Company</h2>
-            <ul className="mt-4 space-y-2.5 text-[15px]">
+            <ul className="tap-list mt-4 space-y-2.5 text-[15px]">
               {navLinks.filter((l) => l.href !== "/services").map((l) => (
                 <li key={l.href}>
                   <Link className="link-quiet text-bone/85 hover:text-bone" href={l.href}>{l.label}</Link>
