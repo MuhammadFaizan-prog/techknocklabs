@@ -1,0 +1,1218 @@
+[
+ {
+  "slug": "clone-caller",
+  "name": "Clone Caller",
+  "tagline": "AI voice agents that book meetings while you sleep.",
+  "industry": "Sales / RevOps",
+  "platform": "Web app",
+  "services": "AI Agents, Voice AI, SaaS Platform",
+  "stack": "Next.js, React, PostgreSQL",
+  "site": "clonecaller.com",
+  "about": [
+   "Clone Caller is an AI voice-agent platform for outbound sales. Teams upload their leads, and human-like AI callers handle the outreach — calling, qualifying, and booking meetings straight into the sales team's calendar, 24/7.",
+   "It's positioned as a lower-cost, always-on alternative to hiring and managing a team of human SDRs."
+  ],
+  "liveUrl": "https://clonecaller.com",
+  "challenge": [
+   "Outbound calling is expensive and hard to scale — SDR teams are costly to hire, ramp, and retain.",
+   "Voice AI has to sound natural and respond in real time, or prospects hang up within seconds.",
+   "Qualification logic differs for every customer, so agents had to be configurable without code.",
+   "Booked meetings needed to land reliably in real calendars, with no double-bookings."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1 week",
+    "body": "Mapped the SDR workflow, qualification criteria, and call outcomes worth automating."
+   },
+   {
+    "phase": "Voice prototype",
+    "n": "02",
+    "duration": "2 weeks",
+    "body": "Built a low-latency calling loop and tuned voices and turn-taking on real scripts."
+   },
+   {
+    "phase": "Platform build",
+    "n": "03",
+    "duration": "6 weeks",
+    "body": "Lead upload, campaign setup, call logs, calendar booking, and the admin console."
+   },
+   {
+    "phase": "Launch & tuning",
+    "n": "04",
+    "duration": "Ongoing",
+    "body": "Monitored live calls, refined prompts, and improved conversion of calls to meetings."
+   }
+  ],
+  "approach": [
+   "Designed a real-time voice pipeline (speech-to-text → LLM → text-to-speech) optimised for low latency.",
+   "Made qualification flows configurable per campaign, so each customer can define what a good lead is.",
+   "Connected calendar booking so qualified prospects pick a slot during the call.",
+   "Logged every call with transcript and outcome for review, coaching, and compliance."
+  ],
+  "features": [
+   {
+    "title": "Human-like AI callers",
+    "body": "Natural voices with real-time turn-taking that handle objections and questions."
+   },
+   {
+    "title": "Lead qualification",
+    "body": "Configurable criteria that score and route prospects during the conversation."
+   },
+   {
+    "title": "Automatic booking",
+    "body": "Qualified leads are booked straight into the sales team's calendar."
+   },
+   {
+    "title": "Call analytics",
+    "body": "Transcripts, outcomes, and campaign performance in one dashboard."
+   }
+  ],
+  "techStack": [
+   "Next.js",
+   "React",
+   "PostgreSQL",
+   "Voice AI"
+  ],
+  "results": [
+   "Outbound calling runs around the clock without adding headcount.",
+   "Sales teams spend their time on booked meetings, not cold dials.",
+   "A self-serve SaaS that customers launch campaigns on in minutes."
+  ],
+  "card": {
+   "category": "AI Agent · Voice",
+   "summary": "AI voice-agent platform that cold-calls leads, qualifies them, and books meetings automatically — a lower-cost, always-on replacement for human SDRs.",
+   "tags": [
+    "Next.js",
+    "React",
+    "PostgreSQL",
+    "Voice AI"
+   ]
+  },
+  "image": "/portfolio/clone-caller.jpg",
+  "logo": "/clients/clone-caller.png"
+ },
+ {
+  "slug": "mural-link",
+  "name": "Mural Link",
+  "tagline": "Participant management for global clinical trials.",
+  "industry": "Healthcare / Clinical Trials",
+  "platform": "Web app",
+  "services": "SaaS Platform, Web Application, Payments",
+  "stack": "React, SPA, Payments",
+  "site": "mural-link.app",
+  "about": [
+   "Mural Link is Mural Health's participant-management platform for clinical trials. It helps trial sites look after participants end to end — fee-free global payments, travel coordination, and communication between sites and participants.",
+   "Techknock Labs worked on the platform's web application, including the staging environment used for QA."
+  ],
+  "liveUrl": null,
+  "challenge": [
+   "Trial participants are spread across countries, currencies, and payment methods.",
+   "Sites juggle stipends, travel bookings, and messages across disconnected tools.",
+   "Clinical data and participant details demand strict privacy and access control.",
+   "The product had to be simple enough for busy site staff with minimal training."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1–2 weeks",
+    "body": "Worked with the product team on site and participant journeys."
+   },
+   {
+    "phase": "UX & architecture",
+    "n": "02",
+    "duration": "2 weeks",
+    "body": "Designed role-based flows for sites, sponsors, and participants."
+   },
+   {
+    "phase": "Build",
+    "n": "03",
+    "duration": "Multiple sprints",
+    "body": "Delivered payments, travel, and messaging modules in weekly increments."
+   },
+   {
+    "phase": "QA & release",
+    "n": "04",
+    "duration": "Ongoing",
+    "body": "Staging environment, regression testing, and continuous releases."
+   }
+  ],
+  "approach": [
+   "Built a single-page React application with clear, role-based workspaces.",
+   "Integrated global, fee-free payouts so participants are reimbursed quickly.",
+   "Added travel coordination and secure messaging inside the same platform.",
+   "Set up a dedicated staging environment so every release is QA'd before production."
+  ],
+  "features": [
+   {
+    "title": "Global payments",
+    "body": "Fee-free stipends and reimbursements to participants worldwide."
+   },
+   {
+    "title": "Travel coordination",
+    "body": "Book and manage participant travel for site visits."
+   },
+   {
+    "title": "Site–participant messaging",
+    "body": "Secure communication between trial sites and participants."
+   },
+   {
+    "title": "Role-based access",
+    "body": "Separate, permissioned views for sites, sponsors, and admins."
+   }
+  ],
+  "techStack": [
+   "React",
+   "SPA",
+   "Payments",
+   "Messaging"
+  ],
+  "results": [
+   "One platform replaces the spreadsheets and point tools sites relied on.",
+   "Participants get paid faster, which supports retention across a trial.",
+   "A QA-first release process that keeps a regulated product stable."
+  ],
+  "card": {
+   "category": "Full Stack SaaS",
+   "summary": "Participant-management platform for clinical trials by Mural Health — fee-free global payments, travel coordination, and site-to-participant communication.",
+   "tags": [
+    "React",
+    "SPA",
+    "Payments",
+    "Messaging"
+   ]
+  },
+  "image": "/portfolio/mural-link.jpg",
+  "logo": "/clients/mural-link.png"
+ },
+ {
+  "slug": "secure-living",
+  "name": "Secure Living",
+  "tagline": "Property management, simplified for Kenyan landlords.",
+  "industry": "PropTech / Real Estate",
+  "platform": "Web app",
+  "services": "Web Application, SaaS Platform, Payments",
+  "stack": "Next.js, React, M-Pesa",
+  "site": "secure-living-ldt8.vercel.app",
+  "about": [
+   "Secure Living is a property-management platform built for landlords in Kenya. It covers the whole rental lifecycle — tenant onboarding, rent collection, compliance, and portfolio analytics — in one secure place.",
+   "Rent is collected through escrow-backed M-Pesa payments, the way most Kenyan tenants already prefer to pay."
+  ],
+  "liveUrl": "https://secure-living-ldt8.vercel.app",
+  "challenge": [
+   "Landlords were collecting rent manually and chasing late payments by phone.",
+   "Trust between tenants and landlords is low without a neutral payment layer.",
+   "KYC and compliance checks were paper-based and slow.",
+   "Owners with several properties had no single view of occupancy and income."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1 week",
+    "body": "Interviewed landlords and mapped the rental lifecycle in the Kenyan market."
+   },
+   {
+    "phase": "Design",
+    "n": "02",
+    "duration": "2 weeks",
+    "body": "Designed landlord, tenant, and admin journeys and the escrow payment flow."
+   },
+   {
+    "phase": "Build",
+    "n": "03",
+    "duration": "6–8 weeks",
+    "body": "Onboarding, M-Pesa integration, KYC, and analytics dashboards."
+   },
+   {
+    "phase": "Launch",
+    "n": "04",
+    "duration": "Ongoing",
+    "body": "Production release on Vercel with monitoring and iteration."
+   }
+  ],
+  "approach": [
+   "Built a fast Next.js web app deployed on Vercel.",
+   "Integrated M-Pesa with escrow, so funds are protected until conditions are met.",
+   "Digitised tenant onboarding and KYC with verified listings.",
+   "Designed portfolio analytics that show occupancy, arrears, and income at a glance."
+  ],
+  "features": [
+   {
+    "title": "Tenant onboarding",
+    "body": "Digital applications, verification, and lease setup."
+   },
+   {
+    "title": "Escrow-backed M-Pesa rent",
+    "body": "Secure rent collection with automatic reconciliation."
+   },
+   {
+    "title": "KYC & compliance",
+    "body": "Identity checks and records built into the workflow."
+   },
+   {
+    "title": "Portfolio analytics",
+    "body": "Occupancy, arrears, and income across every property."
+   }
+  ],
+  "techStack": [
+   "Next.js",
+   "React",
+   "M-Pesa",
+   "Vercel"
+  ],
+  "results": [
+   "Rent collection moved from manual follow-ups to automated payments.",
+   "Escrow builds trust between landlords and tenants.",
+   "Landlords manage their whole portfolio from one dashboard."
+  ],
+  "card": {
+   "category": "Full Stack SaaS",
+   "summary": "Property-management platform for Kenyan landlords — tenant onboarding, escrow-backed M-Pesa rent collection, KYC/compliance, and portfolio analytics.",
+   "tags": [
+    "Next.js",
+    "React",
+    "M-Pesa",
+    "Vercel"
+   ]
+  },
+  "image": "/portfolio/secure-living.jpg",
+  "logo": null
+ },
+ {
+  "slug": "crossmypart",
+  "name": "CrossMyPart",
+  "tagline": "Find, compare, and source electronic components.",
+  "industry": "Electronics / Procurement",
+  "platform": "Web app",
+  "services": "Web Application, System Integration, Data Pipelines",
+  "stack": "Next.js, DigiKey API, Playwright",
+  "site": "crossmypart-frontend.vercel.app",
+  "about": [
+   "CrossMyPart is an electronic-components search and BOM-sourcing tool. Engineers and buyers find the exact part, a compatible alternative, or a cross-reference — each with a transparent match score — alongside live pricing.",
+   "Once a bill of materials is sourced, CrossMyPart creates purchase orders automatically in Odoo ERP."
+  ],
+  "liveUrl": "https://crossmypart-frontend.vercel.app",
+  "challenge": [
+   "Finding equivalent parts across manufacturers is slow, manual, and error-prone.",
+   "Pricing and stock change constantly across distributors.",
+   "Sourcing a full BOM meant copy-pasting between spreadsheets, supplier sites, and the ERP.",
+   "Some distributor catalogues have no public API to integrate with."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1 week",
+    "body": "Mapped the sourcing workflow and the data each step needs."
+   },
+   {
+    "phase": "Data layer",
+    "n": "02",
+    "duration": "3 weeks",
+    "body": "DigiKey API integration and a Playwright indexer for the LCSC catalogue."
+   },
+   {
+    "phase": "Product build",
+    "n": "03",
+    "duration": "4 weeks",
+    "body": "Search, match scoring, BOM upload, and cart."
+   },
+   {
+    "phase": "ERP integration",
+    "n": "04",
+    "duration": "2 weeks",
+    "body": "Automatic Odoo purchase orders over JSON-RPC."
+   }
+  ],
+  "approach": [
+   "Indexed over a million parts by combining the DigiKey API with a Playwright-based LCSC indexer.",
+   "Built a match-scoring engine that explains why a part is a good cross-reference.",
+   "Added BOM upload (CSV/Excel) so a full build can be sourced in one pass.",
+   "Connected Odoo ERP so sourced BOMs become purchase orders automatically."
+  ],
+  "features": [
+   {
+    "title": "Cross-reference search",
+    "body": "Exact, compatible, and alternative parts with a transparent match score."
+   },
+   {
+    "title": "Live pricing",
+    "body": "Real-time DigiKey and LCSC pricing and stock."
+   },
+   {
+    "title": "BOM sourcing",
+    "body": "Upload a bill of materials and source every line at once."
+   },
+   {
+    "title": "Odoo purchase orders",
+    "body": "Sourced parts become POs in the ERP automatically."
+   }
+  ],
+  "techStack": [
+   "Next.js",
+   "DigiKey API",
+   "Playwright",
+   "Odoo ERP"
+  ],
+  "results": [
+   "A catalogue of over a million parts, searchable in seconds.",
+   "BOM sourcing that used to take hours now takes minutes.",
+   "No more re-keying orders between sourcing tools and the ERP."
+  ],
+  "card": {
+   "category": "Full Stack + Integrations",
+   "summary": "Electronic-components search and BOM-sourcing tool — cross-reference parts with a transparent match score, live DigiKey/LCSC pricing, and automatic Odoo purchase orders.",
+   "tags": [
+    "Next.js",
+    "DigiKey API",
+    "Playwright",
+    "Odoo ERP"
+   ]
+  },
+  "image": "/portfolio/crossmypart.jpg",
+  "logo": "/clients/crossmypart.png"
+ },
+ {
+  "slug": "pln-ai",
+  "name": "Plan AI",
+  "tagline": "AI property intelligence for owners and contractors.",
+  "industry": "Real Estate / PropTech",
+  "platform": "Web app",
+  "services": "Custom AI Application, Marketplace, Web Application",
+  "stack": "Next.js, React, AI analysis",
+  "site": "pln-ai.app",
+  "about": [
+   "Plan AI combines zoning intelligence, AI cost estimation, and contractor matching to help owners make smarter property decisions in minutes, not months.",
+   "The platform has two sides: owners analyse renovation potential and post projects, and contractors find work and bid through a dedicated portal."
+  ],
+  "liveUrl": null,
+  "challenge": [
+   "Owners struggle to understand what they can build and what it will cost.",
+   "Zoning rules are complex and vary by location.",
+   "Matching owners with trustworthy contractors is slow and opaque.",
+   "Two very different user types needed their own experience in one product."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1–2 weeks",
+    "body": "Defined owner and contractor journeys and the AI analysis outputs."
+   },
+   {
+    "phase": "AI prototype",
+    "n": "02",
+    "duration": "3 weeks",
+    "body": "Renovation analysis and zoning lookups validated on real properties."
+   },
+   {
+    "phase": "Platform build",
+    "n": "03",
+    "duration": "6 weeks",
+    "body": "Owner and contractor portals, projects, and bidding."
+   },
+   {
+    "phase": "Iteration",
+    "n": "04",
+    "duration": "Ongoing",
+    "body": "Improving estimate quality and marketplace flow."
+   }
+  ],
+  "approach": [
+   "Built instant renovation analysis that turns property details into recommendations.",
+   "Added zoning intelligence so owners see permitted options before they spend.",
+   "Created a bid marketplace with separate, role-based owner and contractor accounts.",
+   "Kept the experience simple: from property to plan to bids in a few steps."
+  ],
+  "features": [
+   {
+    "title": "Instant renovation analysis",
+    "body": "AI-generated recommendations and cost estimates."
+   },
+   {
+    "title": "Zoning intelligence",
+    "body": "Know what you can build before committing budget."
+   },
+   {
+    "title": "Plan & bid marketplace",
+    "body": "Owners post projects; vetted contractors bid."
+   },
+   {
+    "title": "Dual portals",
+    "body": "Dedicated workspaces for owners and contractors."
+   }
+  ],
+  "techStack": [
+   "Next.js",
+   "React",
+   "AI analysis",
+   "Marketplace"
+  ],
+  "results": [
+   "Owners go from idea to costed plan in minutes.",
+   "Contractors get a steady pipeline of qualified projects.",
+   "One platform for analysis, planning, and hiring."
+  ],
+  "card": {
+   "category": "Full Stack + AI",
+   "summary": "AI property-intelligence platform connecting owners with contractors — instant renovation analysis, zoning intelligence, and a bid marketplace with separate owner and contractor portals.",
+   "tags": [
+    "Next.js",
+    "React",
+    "AI analysis",
+    "Marketplace"
+   ]
+  },
+  "image": "/portfolio/pln-ai.jpg",
+  "logo": "/clients/pln-ai.png"
+ },
+ {
+  "slug": "justtravel",
+  "name": "Just Travel",
+  "tagline": "Trip planning as a conversation, on web and mobile.",
+  "industry": "TravelTech",
+  "platform": "Web + mobile app",
+  "services": "Mobile App, Custom AI Application, Integrations",
+  "stack": "PHP, Laravel, MySQL",
+  "site": "justtravel.pro",
+  "about": [
+   "Just Travel reimagines trip planning as a dialogue instead of a form. Instead of juggling tabs for flights, hotels, and local tips, travellers talk to JustMine — an AI travel companion powered by Google Gemini — to shape their trip.",
+   "When the plan is ready, travellers move straight into search and booking flows backed by industry travel APIs, on the web or in the mobile app."
+  ],
+  "liveUrl": "https://justtravel.pro",
+  "challenge": [
+   "Planning a trip means hopping between many sites and tabs.",
+   "Traditional search forms don't capture what travellers actually want.",
+   "AI suggestions are only useful if they connect to real, bookable inventory.",
+   "Travellers expect the same experience on their phone as on desktop."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1 week",
+    "body": "Mapped the planning journey and where conversation beats forms."
+   },
+   {
+    "phase": "AI companion",
+    "n": "02",
+    "duration": "3 weeks",
+    "body": "Built JustMine on Google Gemini with travel-specific context."
+   },
+   {
+    "phase": "Booking flows",
+    "n": "03",
+    "duration": "5 weeks",
+    "body": "Flight and hotel search and booking via industry APIs."
+   },
+   {
+    "phase": "Mobile & launch",
+    "n": "04",
+    "duration": "4 weeks",
+    "body": "Mobile app experience and production launch."
+   }
+  ],
+  "approach": [
+   "Designed a conversational planner that turns a chat into a structured itinerary.",
+   "Grounded AI suggestions in live flight and hotel inventory.",
+   "Built a robust Laravel and MySQL backend for search and bookings.",
+   "Delivered a consistent experience across the web app and the mobile app."
+  ],
+  "features": [
+   {
+    "title": "JustMine AI companion",
+    "body": "A Gemini-powered assistant that plans trips through conversation."
+   },
+   {
+    "title": "Flights & hotels",
+    "body": "Search and book real inventory through industry APIs."
+   },
+   {
+    "title": "Smart itineraries",
+    "body": "Plans that adapt as the conversation evolves."
+   },
+   {
+    "title": "Web + mobile",
+    "body": "Plan on desktop, continue on your phone."
+   }
+  ],
+  "techStack": [
+   "PHP",
+   "Laravel",
+   "MySQL",
+   "Google Gemini"
+  ],
+  "results": [
+   "Travellers plan and book in one place instead of ten tabs.",
+   "AI suggestions are always tied to bookable options.",
+   "A seamless experience across web and mobile."
+  ],
+  "card": {
+   "category": "Mobile App + AI",
+   "summary": "Trip planning as a dialogue instead of a form — travellers shape their trip with JustMine, a Gemini-powered AI companion, then book flights and hotels on the web or in the mobile app.",
+   "tags": [
+    "PHP",
+    "Laravel",
+    "MySQL",
+    "Google Gemini"
+   ]
+  },
+  "image": "/portfolio/justtravel.jpg",
+  "logo": null
+ },
+ {
+  "slug": "staynest",
+  "name": "StayNest",
+  "tagline": "AI-powered hotel booking and management.",
+  "industry": "Hospitality",
+  "platform": "Web app",
+  "services": "SaaS Platform, Custom AI Application, Payments",
+  "stack": "React, AI assistant, Stripe",
+  "site": "staynest.arclite.site",
+  "about": [
+   "StayNest is an AI-based hotel management system with two sides: guests search, chat with an AI hotel assistant, and book rooms; hotel managers create and run their properties from a dedicated portal.",
+   "Payments run through Stripe, and managers see revenue analytics for every hotel they manage."
+  ],
+  "liveUrl": "https://staynest.arclite.site",
+  "challenge": [
+   "Guests want fast, natural search, not endless filters.",
+   "Independent hotels need modern booking tools without enterprise cost.",
+   "Availability, bookings, and payments had to stay in sync in real time.",
+   "Managers needed clear revenue insight across properties."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1 week",
+    "body": "Defined guest and manager journeys and the AI assistant's role."
+   },
+   {
+    "phase": "Design",
+    "n": "02",
+    "duration": "2 weeks",
+    "body": "Booking flow, manager portal, and analytics."
+   },
+   {
+    "phase": "Build",
+    "n": "03",
+    "duration": "6 weeks",
+    "body": "Search, availability, Stripe booking, and the AI assistant."
+   },
+   {
+    "phase": "Launch",
+    "n": "04",
+    "duration": "Ongoing",
+    "body": "Production release and continuous improvements."
+   }
+  ],
+  "approach": [
+   "Added AI-powered search and an in-app hotel assistant for guests.",
+   "Built real-time room availability and booking tracking.",
+   "Integrated Stripe for secure payments.",
+   "Gave managers a portal to create hotels, add rooms, manage bookings, and track revenue."
+  ],
+  "features": [
+   {
+    "title": "AI search & assistant",
+    "body": "Find and ask about hotels in natural language."
+   },
+   {
+    "title": "Live availability & booking",
+    "body": "Real-time rooms, booking, and tracking."
+   },
+   {
+    "title": "Stripe payments",
+    "body": "Secure online payment for every booking."
+   },
+   {
+    "title": "Manager portal",
+    "body": "Hotels, rooms, bookings, and revenue analytics."
+   }
+  ],
+  "techStack": [
+   "React",
+   "AI assistant",
+   "Stripe",
+   "Analytics"
+  ],
+  "results": [
+   "Guests find and book the right room faster.",
+   "Hotels run bookings and payments from one system.",
+   "Managers get revenue visibility across properties."
+  ],
+  "card": {
+   "category": "Full Stack + AI",
+   "summary": "AI-based hotel management system — AI-powered search and hotel assistant, live room availability, Stripe booking and payments, and a manager portal with revenue analytics.",
+   "tags": [
+    "React",
+    "AI assistant",
+    "Stripe",
+    "Analytics"
+   ]
+  },
+  "image": "/portfolio/staynest.jpg",
+  "logo": "/clients/staynest.png"
+ },
+ {
+  "slug": "a1-renovations",
+  "name": "A1 Renovations",
+  "tagline": "Get an AI renovation estimate before you call a contractor.",
+  "industry": "Home Services",
+  "platform": "Web app",
+  "services": "Custom AI Application, RAG / LLM, Marketplace",
+  "stack": "Next.js, Supabase, RAG / LLM",
+  "site": "a1-renovations-web.vercel.app",
+  "about": [
+   "A1 Renovations is an AI renovation-estimate marketplace. Homeowners upload a photo, describe what they want, and get a price estimate generated from a curated knowledge base.",
+   "From there they compare the market and place their project for contractors to bid on — a complete marketplace from estimate to hire."
+  ],
+  "liveUrl": "https://a1-renovations-web.vercel.app",
+  "challenge": [
+   "Homeowners have no idea what a renovation should cost before getting quotes.",
+   "Quotes vary wildly, making them hard to compare.",
+   "Estimates from generic AI are unreliable without real pricing data.",
+   "Connecting estimates to real contractors needed a full marketplace."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1 week",
+    "body": "Defined the estimate inputs and the pricing knowledge base."
+   },
+   {
+    "phase": "RAG pipeline",
+    "n": "02",
+    "duration": "3 weeks",
+    "body": "Built retrieval over pricing data to ground every estimate."
+   },
+   {
+    "phase": "Marketplace",
+    "n": "03",
+    "duration": "5 weeks",
+    "body": "Projects, bids, market comparison, and accounts."
+   },
+   {
+    "phase": "Launch",
+    "n": "04",
+    "duration": "Ongoing",
+    "body": "Production release on Vercel and estimate tuning."
+   }
+  ],
+  "approach": [
+   "Built a RAG pipeline over a renovation-pricing knowledge base so estimates are grounded.",
+   "Combined image upload with a text brief to understand the job.",
+   "Added market comparison so homeowners can sense-check every quote.",
+   "Delivered the marketplace on Next.js, Supabase, and Node.js."
+  ],
+  "features": [
+   {
+    "title": "Photo + brief estimates",
+    "body": "Upload a photo, describe the job, get a price."
+   },
+   {
+    "title": "Grounded AI pricing",
+    "body": "Estimates retrieved from a curated knowledge base."
+   },
+   {
+    "title": "Market comparison",
+    "body": "See how quotes compare across the market."
+   },
+   {
+    "title": "Bidding marketplace",
+    "body": "Contractors bid on projects posted by homeowners."
+   }
+  ],
+  "techStack": [
+   "Next.js",
+   "Supabase",
+   "RAG / LLM",
+   "Node.js"
+  ],
+  "results": [
+   "Homeowners start every conversation knowing the likely cost.",
+   "Contractors receive better-qualified, well-described jobs.",
+   "Estimate to hire, in one product."
+  ],
+  "card": {
+   "category": "Full Stack · LLM + RAG",
+   "summary": "AI renovation-estimate marketplace — upload a photo and a brief, get a price estimated from a RAG knowledge base, then compare the market and place bids with contractors.",
+   "tags": [
+    "Next.js",
+    "Supabase",
+    "RAG / LLM",
+    "Node.js"
+   ]
+  },
+  "image": "/portfolio/a1-renovations.jpg",
+  "logo": null
+ },
+ {
+  "slug": "archively",
+  "name": "Archively",
+  "tagline": "Protect your family, even when you're not there.",
+  "industry": "Digital Legacy / Security",
+  "platform": "Web app",
+  "services": "Web Application, Web3, Security",
+  "stack": "React, Supabase, Solidity",
+  "site": "archively.com",
+  "about": [
+   "Archively is a secure digital vault for life's most important documents — wills, insurance, property records, and personal wishes — so they're available to the right people when it matters most.",
+   "Records are protected permanently, with blockchain-backed integrity for documents that must never be lost or altered."
+  ],
+  "liveUrl": "https://archively.com",
+  "challenge": [
+   "Critical documents are scattered across drawers, inboxes, and drives.",
+   "Families often can't find what they need at the hardest moments.",
+   "Documents need strong security and proof they haven't been tampered with.",
+   "The experience had to feel calm and trustworthy, not technical."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1 week",
+    "body": "Defined the vault, access rules, and release scenarios."
+   },
+   {
+    "phase": "Design",
+    "n": "02",
+    "duration": "2 weeks",
+    "body": "A calm, trustworthy experience for a sensitive subject."
+   },
+   {
+    "phase": "Build",
+    "n": "03",
+    "duration": "6 weeks",
+    "body": "Vault, sharing, and Supabase backend."
+   },
+   {
+    "phase": "Web3 layer",
+    "n": "04",
+    "duration": "3 weeks",
+    "body": "Solidity smart contracts for document integrity."
+   }
+  ],
+  "approach": [
+   "Built a React front end with a Supabase backend for secure storage and auth.",
+   "Added Solidity smart contracts to anchor document integrity on-chain.",
+   "Designed controlled access so the right people get the right documents.",
+   "Kept the interface warm and simple for non-technical families."
+  ],
+  "features": [
+   {
+    "title": "Secure document vault",
+    "body": "Store life's critical documents in one protected place."
+   },
+   {
+    "title": "Trusted access",
+    "body": "Decide who can see what, and when."
+   },
+   {
+    "title": "Tamper-proof records",
+    "body": "Blockchain-backed integrity for important files."
+   },
+   {
+    "title": "Permanent protection",
+    "body": "Documents preserved for generations."
+   }
+  ],
+  "techStack": [
+   "React",
+   "Supabase",
+   "Solidity"
+  ],
+  "results": [
+   "Families know exactly where everything important is.",
+   "Documents are secure and provably unaltered.",
+   "A sensitive product that feels simple and reassuring."
+  ],
+  "card": {
+   "category": "Full Stack + Web3",
+   "summary": "Secure digital vault for life's critical documents — protecting your family's records permanently, with controlled release for the moments that matter.",
+   "tags": [
+    "React",
+    "Supabase",
+    "Solidity"
+   ]
+  },
+  "image": "/portfolio/archively.jpg",
+  "logo": "/clients/archively.png"
+ },
+ {
+  "slug": "loadbetter",
+  "name": "Loadbetter",
+  "tagline": "Warehouse operations, orchestrated.",
+  "industry": "Logistics / Warehousing",
+  "platform": "Web app",
+  "services": "Web Application, SaaS Platform, Workflow Automation",
+  "stack": "Next.js, RBAC, Scheduling",
+  "site": "loadbetter.vercel.app",
+  "about": [
+   "Loadbetter is a warehouse operations platform that brings dock scheduling, appointments, and order tracking into one professional control centre.",
+   "Warehouse managers plan and oversee the day, while operators get a focused workspace for the tasks in front of them."
+  ],
+  "liveUrl": "https://loadbetter.vercel.app",
+  "challenge": [
+   "Dock schedules lived on whiteboards and spreadsheets.",
+   "Managers lacked real-time visibility of what was happening at each dock.",
+   "Carrier appointments clashed, causing delays and idle time.",
+   "Managers and operators needed very different views of the same data."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1 week",
+    "body": "Shadowed warehouse workflows and dock operations."
+   },
+   {
+    "phase": "Design",
+    "n": "02",
+    "duration": "2 weeks",
+    "body": "Manager and operator workspaces and scheduling UX."
+   },
+   {
+    "phase": "Build",
+    "n": "03",
+    "duration": "6 weeks",
+    "body": "Dock visibility, appointments, and order tracking."
+   },
+   {
+    "phase": "Launch",
+    "n": "04",
+    "duration": "Ongoing",
+    "body": "Production release on Vercel and iteration with users."
+   }
+  ],
+  "approach": [
+   "Built live dock visibility so managers see every door's status at a glance.",
+   "Added smart appointment scheduling to prevent carrier clashes.",
+   "Tracked orders and shipments from arrival to dispatch.",
+   "Implemented role-based access for manager and operator accounts."
+  ],
+  "features": [
+   {
+    "title": "Live dock visibility",
+    "body": "Monitor every loading door from one control centre."
+   },
+   {
+    "title": "Smart appointments",
+    "body": "Schedule carriers without clashes or idle time."
+   },
+   {
+    "title": "Order & shipment tracking",
+    "body": "Follow every order from arrival to dispatch."
+   },
+   {
+    "title": "Role-based workspaces",
+    "body": "Separate views for managers and operators."
+   }
+  ],
+  "techStack": [
+   "Next.js",
+   "RBAC",
+   "Scheduling",
+   "Vercel"
+  ],
+  "results": [
+   "Whiteboards and spreadsheets replaced by one live system.",
+   "Fewer scheduling conflicts at the docks.",
+   "Managers and operators work from the same source of truth."
+  ],
+  "card": {
+   "category": "Full Stack SaaS",
+   "summary": "Warehouse operations platform — live dock visibility, smart appointment scheduling, and order and shipment tracking, with role-based manager and operator workspaces.",
+   "tags": [
+    "Next.js",
+    "RBAC",
+    "Scheduling",
+    "Vercel"
+   ]
+  },
+  "image": "/portfolio/loadbetter.jpg",
+  "logo": "/clients/loadbetter.png"
+ },
+ {
+  "slug": "braincity",
+  "name": "BrainCity",
+  "tagline": "Find the right course. Learn at your pace.",
+  "industry": "EdTech / E-Learning",
+  "platform": "Web app",
+  "services": "SaaS Platform, Web Application, Multi-tenancy",
+  "stack": "Next.js, NestJS, PostgreSQL",
+  "site": "brain-city-1.onrender.com",
+  "about": [
+   "BrainCity is a multi-tenant learning platform where students discover in-demand courses, instructors publish and teach, and organisations (tenants) run their own learning spaces.",
+   "It offers a course catalogue, professional certificates, and administration tools for every role."
+  ],
+  "liveUrl": "https://brain-city-1.onrender.com",
+  "challenge": [
+   "Three user types — students, instructors, and tenants — each needed their own experience.",
+   "Organisations wanted isolated spaces with their own users and courses.",
+   "The catalogue had to stay fast and searchable as it grew.",
+   "Admins needed fine-grained control without developer help."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1 week",
+    "body": "Defined roles, tenancy model, and the learning journey."
+   },
+   {
+    "phase": "Architecture",
+    "n": "02",
+    "duration": "2 weeks",
+    "body": "Multi-tenant NestJS and PostgreSQL design."
+   },
+   {
+    "phase": "Build",
+    "n": "03",
+    "duration": "7 weeks",
+    "body": "Catalogue, enrolment, instructor tools, and admin."
+   },
+   {
+    "phase": "Launch",
+    "n": "04",
+    "duration": "Ongoing",
+    "body": "Production release and new learning features."
+   }
+  ],
+  "approach": [
+   "Designed a multi-tenant architecture with data isolation per organisation.",
+   "Built a NestJS API and PostgreSQL data model behind a Next.js front end.",
+   "Created role-based experiences for students, instructors, and super admins.",
+   "Made the catalogue searchable with categories and featured courses."
+  ],
+  "features": [
+   {
+    "title": "Course catalogue",
+    "body": "Browse and search in-demand courses and certificates."
+   },
+   {
+    "title": "Instructor tools",
+    "body": "Publish courses and manage learners."
+   },
+   {
+    "title": "Multi-tenant spaces",
+    "body": "Each organisation runs its own learning space."
+   },
+   {
+    "title": "Admin control",
+    "body": "Super-admin and tenant-level administration."
+   }
+  ],
+  "techStack": [
+   "Next.js",
+   "NestJS",
+   "PostgreSQL",
+   "Multi-tenant"
+  ],
+  "results": [
+   "One platform serves students, instructors, and organisations.",
+   "New tenants can be onboarded without new code.",
+   "A scalable foundation for future learning products."
+  ],
+  "card": {
+   "category": "Full Stack SaaS",
+   "summary": "Multi-tenant learning platform for students, instructors, and organisations — course catalogue, enrolment, and tenant-level administration.",
+   "tags": [
+    "Next.js",
+    "NestJS",
+    "PostgreSQL",
+    "Multi-tenant"
+   ]
+  },
+  "image": "/portfolio/braincity.jpg",
+  "logo": "/clients/braincity.png"
+ },
+ {
+  "slug": "emr-system",
+  "name": "EMR System",
+  "tagline": "Electronic medical records for modern clinics.",
+  "industry": "Healthcare",
+  "platform": "Web app",
+  "services": "Web Application, Healthcare Software, Security",
+  "stack": "Next.js, MongoDB, Healthcare",
+  "site": "emr-h-lime.vercel.app",
+  "about": [
+   "This electronic medical record (EMR) system digitises how clinics manage patients — records, appointments, and doctor–patient interactions in one secure application.",
+   "Doctors and patients each have their own access, with clinical data protected by role-based permissions."
+  ],
+  "liveUrl": "https://emr-h-lime.vercel.app",
+  "challenge": [
+   "Paper and spreadsheet records were slow to search and easy to lose.",
+   "Doctors needed a complete patient history in seconds.",
+   "Medical data requires strict access control and privacy.",
+   "Clinic staff needed something simple enough to adopt on day one."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1 week",
+    "body": "Mapped clinic workflows and record types."
+   },
+   {
+    "phase": "Design",
+    "n": "02",
+    "duration": "1–2 weeks",
+    "body": "Doctor and patient journeys and record layouts."
+   },
+   {
+    "phase": "Build",
+    "n": "03",
+    "duration": "5 weeks",
+    "body": "Records, interactions, and authentication."
+   },
+   {
+    "phase": "Launch",
+    "n": "04",
+    "duration": "Ongoing",
+    "body": "Deployment and iteration with clinic staff."
+   }
+  ],
+  "approach": [
+   "Built a Next.js application with a MongoDB data store suited to flexible medical records.",
+   "Implemented secure login and role-based access for doctors and patients.",
+   "Designed record views that surface the most important history first.",
+   "Kept the interface clean and calm for a busy clinical setting."
+  ],
+  "features": [
+   {
+    "title": "Patient records",
+    "body": "Complete, searchable medical histories."
+   },
+   {
+    "title": "Doctor–patient interactions",
+    "body": "Consultations and notes in one place."
+   },
+   {
+    "title": "Secure access",
+    "body": "Role-based permissions for clinical data."
+   },
+   {
+    "title": "Simple to adopt",
+    "body": "A clean interface built for busy clinics."
+   }
+  ],
+  "techStack": [
+   "Next.js",
+   "MongoDB",
+   "Healthcare"
+  ],
+  "results": [
+   "Patient history available in seconds, not minutes.",
+   "Records secured behind role-based access.",
+   "Clinics move from paper to digital without disruption."
+  ],
+  "card": {
+   "category": "Full Stack",
+   "summary": "Electronic medical record system for clinics — patient records, doctor-patient interactions, and secure role-based access to clinical data.",
+   "tags": [
+    "Next.js",
+    "MongoDB",
+    "Healthcare"
+   ]
+  },
+  "image": "/portfolio/emr-system.jpg",
+  "logo": null
+ },
+ {
+  "slug": "water-consumption",
+  "name": "Water Demand GIS",
+  "tagline": "See how much water your area has left.",
+  "industry": "Utilities / Sustainability",
+  "platform": "Web app",
+  "services": "Web Application, GIS, Data Visualisation",
+  "stack": "Next.js, PostgreSQL, GIS",
+  "site": "webgis-2-0nt0.onrender.com",
+  "about": [
+   "Water Demand GIS is a web mapping platform that models household water consumption against local supply. Users enter their daily water routine and see how much water would remain in their area.",
+   "It turns abstract consumption data into a clear, location-based picture that encourages smarter water use."
+  ],
+  "liveUrl": "https://webgis-2-0nt0.onrender.com",
+  "challenge": [
+   "People rarely understand how their daily habits affect local water supply.",
+   "Water data is spread across sources and hard to interpret.",
+   "Results needed to be shown on a map, by area, to feel relevant.",
+   "The tool had to be simple enough for anyone to use."
+  ],
+  "timeline": [
+   {
+    "phase": "Discovery",
+    "n": "01",
+    "duration": "1 week",
+    "body": "Defined the consumption model and data sources."
+   },
+   {
+    "phase": "Data & GIS",
+    "n": "02",
+    "duration": "3 weeks",
+    "body": "Spatial data model in PostgreSQL and map layers."
+   },
+   {
+    "phase": "Build",
+    "n": "03",
+    "duration": "4 weeks",
+    "body": "Routine inputs, calculations, and dashboards."
+   },
+   {
+    "phase": "Launch",
+    "n": "04",
+    "duration": "Ongoing",
+    "body": "Deployment and model refinement."
+   }
+  ],
+  "approach": [
+   "Modelled water demand from everyday routines like showers, laundry, and cooking.",
+   "Stored and queried spatial data in PostgreSQL for area-level results.",
+   "Visualised remaining supply on an interactive map.",
+   "Built a simple sign-in and dashboard on Next.js."
+  ],
+  "features": [
+   {
+    "title": "Routine-based modelling",
+    "body": "Enter daily habits and see their impact."
+   },
+   {
+    "title": "Area-level results",
+    "body": "Remaining water supply shown by location."
+   },
+   {
+    "title": "Interactive maps",
+    "body": "GIS layers that make the data easy to read."
+   },
+   {
+    "title": "Personal dashboard",
+    "body": "Track and compare your water demand."
+   }
+  ],
+  "techStack": [
+   "Next.js",
+   "PostgreSQL",
+   "GIS"
+  ],
+  "results": [
+   "Water use made tangible and local.",
+   "A clear tool for awareness and planning.",
+   "A reusable GIS foundation for future datasets."
+  ],
+  "card": {
+   "category": "Full Stack · Data",
+   "summary": "Web GIS platform that models household water use against local supply — showing how much water remains in your area based on daily consumption routines.",
+   "tags": [
+    "Next.js",
+    "PostgreSQL",
+    "GIS"
+   ]
+  },
+  "image": null,
+  "logo": null
+ }
+]

@@ -1,0 +1,705 @@
+{
+ "ai-agents": {
+  "slug": "ai-agents",
+  "title": "AI Agents & Automation",
+  "tagline": "Software that completes the work, not just the form.",
+  "intro": "We design intelligent systems that automate repetitive work, streamline operations, and improve business efficiency. From customer interactions to internal workflows, our AI solutions help teams focus on what matters most.",
+  "primaryCta": "Get a free automation audit",
+  "countStat": "42+",
+  "countLabel": "AI automation projects delivered",
+  "stack": [
+   "Python",
+   "TypeScript",
+   "LangGraph",
+   "LangChain",
+   "OpenAI / Claude",
+   "MCP",
+   "Pinecone / pgvector",
+   "n8n",
+   "AWS"
+  ],
+  "overview": [
+   "An AI agent is software that can reason, plan, use your tools, and finish a job end to end — triaging tickets, drafting and sending follow-ups, reconciling data across systems, or running multi-step research. We build agents that do the work, not demos that impress once in a controlled setting and fall apart the moment they meet real data, real volume, and real edge cases.",
+   "Our approach is deliberately incremental. We start with one high-value, well-bounded workflow, instrument it, and prove the ROI with metrics you agree up front — hours saved, error rate, cost per task, response time. Once it's clearly earning its keep, we widen the agent's responsibilities and connect it to more of your stack, so value compounds instead of stalling at a proof of concept.",
+   "Every agent ships production-ready, not just functional. That means evaluation suites that catch regressions before your customers do, guardrails and approval steps around anything sensitive, graceful fallbacks when a tool or model misbehaves, and full observability into what the agent did, why it decided to, and what each run cost. That discipline is the difference between automation you can trust with live operations and a clever prototype that quietly makes expensive mistakes."
+  ],
+  "toolsHeading": "Agents that work inside the tools you already use",
+  "tools": [
+   "HubSpot",
+   "Salesforce",
+   "Slack",
+   "Zendesk",
+   "Gmail"
+  ],
+  "capabilities": [
+   {
+    "title": "Task automation",
+    "body": "Agents that complete multi-step jobs against your real systems — not single prompts, but workflows with branching, retries, and a human in the loop wherever it matters."
+   },
+   {
+    "title": "Tool & data access",
+    "body": "Securely connected to your APIs, databases, and SaaS so the agent acts on live context and current data, with scoped permissions for everything it can touch."
+   },
+   {
+    "title": "Multi-agent orchestration",
+    "body": "Specialised agents that plan, delegate, and hand work to one another — coordinated by a manager so complex jobs get broken down and finished reliably."
+   },
+   {
+    "title": "Evaluation & guardrails",
+    "body": "Measured accuracy against real cases, safety limits, content filters, and tested fallbacks before anything is allowed near production."
+   },
+   {
+    "title": "Human-in-the-loop control",
+    "body": "Approval gates, confidence thresholds, and clean escalation to a person whenever the stakes or the uncertainty are high — you decide where the line sits."
+   },
+   {
+    "title": "Monitoring & cost control",
+    "body": "Full traces of every decision and tool call, plus token and spend tracking, so you always know what the agent is doing and what it costs."
+   }
+  ],
+  "audience": [
+   "Ops leaders with manual workflows",
+   "Support teams with high ticket volume",
+   "Sales teams losing leads to slow follow-up"
+  ],
+  "useCases": [
+   {
+    "title": "Support triage",
+    "body": "Classify, prioritise and route every ticket, draft replies, and escalate the tricky ones to a person."
+   },
+   {
+    "title": "Lead follow-up",
+    "body": "Follow up with every inbound and stale lead in minutes, qualify them, and book meetings into your calendar."
+   },
+   {
+    "title": "Data entry",
+    "body": "Read emails, forms and PDFs, then update your CRM, ERP or spreadsheets without anyone re-keying data."
+   },
+   {
+    "title": "Invoice processing",
+    "body": "Extract line items, match against POs, flag exceptions, and push approved invoices to accounting."
+   },
+   {
+    "title": "Reporting",
+    "body": "Pull numbers from your tools on a schedule and turn them into a written weekly summary for the team."
+   },
+   {
+    "title": "Research",
+    "body": "Gather and summarise information on prospects, competitors or suppliers, with sources you can check."
+   }
+  ],
+  "related": [
+   {
+    "industry": "AI Voice Agents / Sales",
+    "name": "Clone Caller",
+    "outcome": "Outbound calling and meeting booking running 24/7 without new headcount."
+   },
+   {
+    "industry": "Electronics / Procurement",
+    "name": "CrossMyPart",
+    "outcome": "BOM sourcing cut from hours to minutes, with purchase orders created automatically."
+   },
+   {
+    "industry": "Home Services / Marketplace",
+    "name": "A1 Renovations",
+    "outcome": "Instant renovation estimates grounded in a pricing knowledge base."
+   }
+  ],
+  "pricing": {
+   "bestWhen": "You have a repetitive, high-volume workflow eating your team's time",
+   "timeline": "3–6 weeks for a first workflow in production",
+   "from": "$5,000"
+  },
+  "testimonial": {
+   "quote": "They shipped a working AI agent against our real data in weeks, not months — with guardrails and monitoring from day one. It's been running in production reliably ever since.",
+   "name": "Priya",
+   "role": "Head of Engineering, B2B SaaS company"
+  },
+  "faqHeading": "AI Agents & Automation — questions, answered.",
+  "faqs": [
+   {
+    "q": "What can an AI agent actually do for my business?",
+    "a": "Agents complete multi-step tasks against your systems — triaging and routing support, drafting and sending follow-ups, reconciling data between tools, qualifying leads, or running research and producing a summary. We start with one high-value workflow, prove the ROI, then expand into adjacent jobs once it's trusted."
+   },
+   {
+    "q": "Is it safe to let an agent act autonomously?",
+    "a": "Yes, when it's engineered for it. We add guardrails, approval steps, permission scoping, and monitoring, and keep a human in the loop wherever the stakes require it. You define exactly what the agent is allowed to do on its own and what needs sign-off, and every action is logged and reversible."
+   },
+   {
+    "q": "How fast can we see value?",
+    "a": "We scope a focused first workflow that can typically ship in a few weeks, with success metrics agreed up front. You see a working agent on a real task early, rather than waiting months for a big-bang launch."
+   },
+   {
+    "q": "Which parts of our business are the best fit for an agent?",
+    "a": "The best candidates are repetitive, rules-and-judgement tasks that consume skilled people's time — support triage, data entry and reconciliation, outbound follow-up, reporting, and research. In discovery we map your workflows and rank them by value and feasibility so the first build is a safe, high-return bet."
+   },
+   {
+    "q": "Will agents replace our team?",
+    "a": "Our goal is to remove the repetitive load, not the people. Agents handle the high-volume, low-judgement work so your team can focus on the decisions, relationships, and edge cases that genuinely need a human."
+   }
+  ],
+  "cta": {
+   "heading": "Find the work AI can take off your team's plate.",
+   "body": "Tell us how your team works. We'll map 3–5 tasks an agent could handle and what it would take to automate them — free.",
+   "button": "Get a free automation audit"
+  }
+ },
+ "custom-ai-applications": {
+  "slug": "custom-ai-applications",
+  "title": "Custom AI Applications",
+  "tagline": "Generative AI, grounded in your knowledge.",
+  "intro": "Every business has unique challenges. We build custom AI applications that transform ideas into practical solutions, helping organizations improve experiences, uncover insights, and create new opportunities.",
+  "primaryCta": "Book an AI strategy call",
+  "countStat": "24+",
+  "countLabel": "AI application projects delivered",
+  "stack": [
+   "Python",
+   "FastAPI",
+   "Next.js",
+   "OpenAI / Claude / Gemini",
+   "LangChain",
+   "RAG",
+   "Pinecone / pgvector",
+   "Whisper / ElevenLabs",
+   "AWS / Azure AI"
+  ],
+  "overview": [
+   "AI agents do tasks for your team; AI applications are products your users use.",
+   "Most AI features fail for one of two reasons: they hallucinate because they're disconnected from real data, or they're a thin wrapper around a model that never quite fits the way your business works. We build the opposite — applications grounded in your own knowledge base with retrieval (RAG), so answers are accurate, current, and cited back to the source a user can verify.",
+   "A custom AI application is more than a model behind a chat box. It's the interface your team actually wants to use, the retrieval and data pipeline that keeps it grounded, the evaluation harness that proves it's right, and the integration that makes it a natural part of an existing workflow. We design and build all of it, end to end, and tune it to your domain rather than forcing your domain to fit a generic tool.",
+   "Whether it's an in-product copilot, a voice agent for support and sales, a document-intelligence pipeline that reads contracts or claims, or a research assistant over your internal data, we ship a production application with the accuracy, security, and observability to back it. You get something your team trusts and your customers feel — not a demo that wins a meeting and disappoints in practice."
+  ],
+  "capabilities": [
+   {
+    "title": "RAG & knowledge grounding",
+    "body": "Retrieval pipelines over your documents and data so answers are accurate, current, and cited — with the plumbing to keep the knowledge base fresh as your content changes."
+   },
+   {
+    "title": "Copilots & assistants",
+    "body": "In-product AI that helps users do their job faster, embedded where they already work and aware of the context they're working in."
+   },
+   {
+    "title": "Voice & chat interfaces",
+    "body": "Natural voice and chat experiences for support, sales, and internal operations — with memory, escalation, and a tone that fits your brand."
+   },
+   {
+    "title": "Document intelligence",
+    "body": "Extraction, classification, and summarisation pipelines that turn contracts, forms, and unstructured files into structured, searchable data."
+   },
+   {
+    "title": "Custom model & fine-tuning",
+    "body": "Where off-the-shelf models fall short, we fine-tune or compose models around your domain language, formats, and edge cases."
+   },
+   {
+    "title": "Evaluation & accuracy",
+    "body": "Test sets, scoring, and human review built in, so you can measure quality, catch regressions, and improve the system with confidence."
+   }
+  ],
+  "audience": [
+   "SaaS companies adding AI features",
+   "Businesses with large document sets",
+   "Teams wanting a chatbot or voice agent"
+  ],
+  "useCases": [
+   {
+    "title": "In-product copilot",
+    "body": "An assistant inside your product that understands the user's context and helps them get work done faster."
+   },
+   {
+    "title": "Knowledge-base chatbot",
+    "body": "Answers grounded in your docs, policies and help centre — with citations, so users can trust them."
+   },
+   {
+    "title": "Voice agent",
+    "body": "Natural phone or in-app voice conversations for support, bookings and sales, with handoff to a person."
+   },
+   {
+    "title": "Document extraction",
+    "body": "Turn contracts, forms and invoices into structured, searchable data your systems can use."
+   },
+   {
+    "title": "Content generation",
+    "body": "On-brand drafts, summaries and descriptions at scale, with review steps built in."
+   }
+  ],
+  "related": [
+   {
+    "industry": "Home Services / Marketplace",
+    "name": "A1 Renovations",
+    "outcome": "AI estimates from a photo and a brief, grounded in a pricing knowledge base."
+   },
+   {
+    "industry": "TravelTech / AI",
+    "name": "Just Travel",
+    "outcome": "A Gemini-powered trip planner tied to real, bookable flights and hotels."
+   },
+   {
+    "industry": "Real Estate / PropTech",
+    "name": "Plan AI",
+    "outcome": "Owners go from idea to a costed renovation plan in minutes."
+   }
+  ],
+  "pricing": {
+   "bestWhen": "You want an AI feature or product your customers will use every day",
+   "timeline": "6–10 weeks to a production-ready first version",
+   "from": "$10,000"
+  },
+  "testimonial": {
+   "quote": "Strong stakeholder management and a real drive to help customers succeed. Their automation work cut our processing time in half and fixed workflows we'd struggled with for years.",
+   "name": "Daniel",
+   "role": "Operations Director, Logistics company"
+  },
+  "faqHeading": "Custom AI Applications — questions, answered.",
+  "faqs": [
+   {
+    "q": "How do you keep generative AI accurate?",
+    "a": "We ground models in your own data with retrieval (RAG) so responses are based on real sources, add evaluation and guardrails, and measure accuracy against test cases before anything ships. Where it helps, answers cite the source so users can verify them — accuracy you can audit, not just hope for."
+   },
+   {
+    "q": "Do we need a huge dataset to start?",
+    "a": "No. Many high-value features work immediately with LLMs and your existing documents, tickets, and workflows — no training data required. Where a custom or fine-tuned model genuinely adds value, we'll tell you exactly what data is needed and whether the payoff justifies it."
+   },
+   {
+    "q": "Can you embed AI into our existing product?",
+    "a": "Yes. We build AI features as a clean, well-documented part of your current stack — proper APIs, sensible boundaries, and your design system — so it feels native to the product rather than a bolted-on widget."
+   },
+   {
+    "q": "Which AI models do you use?",
+    "a": "We're model-agnostic and choose based on the job, your accuracy needs, data-privacy requirements, and cost — frontier models like Claude and GPT, open models you can self-host, or a mix. You're never locked to a single vendor, and we can swap models as the landscape changes."
+   },
+   {
+    "q": "How do you handle data privacy and security?",
+    "a": "Your data stays within boundaries you control. We support private deployments, scope what the application can access, avoid training third-party models on your data, and design to the compliance requirements your industry demands."
+   }
+  ],
+  "cta": {
+   "heading": "Let's design the AI your users will actually use.",
+   "body": "Book a free AI strategy call. We'll talk through your idea, your data, and the fastest way to a version that works in production.",
+   "button": "Book an AI strategy call"
+  }
+ },
+ "saas-digital-products": {
+  "slug": "saas-digital-products",
+  "title": "SaaS & Digital Products",
+  "tagline": "From idea validation to cloud-ready product.",
+  "intro": "We help businesses launch and scale digital products that deliver exceptional user experiences while supporting long term business growth.",
+  "primaryCta": "Get a fixed-price MVP estimate",
+  "countStat": "30+",
+  "countLabel": "SaaS projects delivered",
+  "stack": [
+   "TypeScript",
+   "Next.js",
+   "React",
+   "Node.js",
+   "NestJS",
+   "PostgreSQL",
+   "Supabase",
+   "Stripe",
+   "Vercel / AWS"
+  ],
+  "overview": [
+   "Building SaaS is its own discipline. Multi-tenancy, authentication, billing, onboarding, retention, and reliability all have to be solved at once, and the decisions you make in the first month quietly determine how painful the next two years will be. We've shipped products through that full lifecycle, and we bring the architecture judgement that's expensive to get wrong later — so you build on foundations instead of around them.",
+   "We start by pressure-testing the idea and the smallest sellable version: what a customer would actually pay for, and what you can learn from putting it in front of them. From there we build toward a platform that scales cleanly — secure by default, observable, and cost-aware from the first deploy, with the boring-but-critical pieces (roles, audit, data isolation, backups) designed in rather than retrofitted.",
+   "Beyond launch, the work is growth: onboarding that activates users, billing that supports the plans your sales team needs, and the analytics to see what's working. We stay accountable after go-live, treating your product as something we help run and improve — not a project we hand over and forget."
+  ],
+  "capabilities": [
+   {
+    "title": "Idea & market validation",
+    "body": "De-risk the concept with a focused, genuinely sellable first version, so you learn from real customers before committing to heavy investment."
+   },
+   {
+    "title": "Multi-tenant architecture",
+    "body": "Tenancy, roles, permissions, and data isolation designed in from the start — the foundation that lets you add enterprise customers without a rewrite."
+   },
+   {
+    "title": "Billing & subscriptions",
+    "body": "Metering, plans, trials, upgrades, and payments (typically Stripe) implemented properly, including the edge cases that quietly leak revenue."
+   },
+   {
+    "title": "Onboarding & retention",
+    "body": "Activation flows, in-app guidance, and the product analytics to understand where users stick and where they drop off."
+   },
+   {
+    "title": "Scale & reliability",
+    "body": "Observability, CI/CD, automated testing, and cloud infrastructure that grows with your customer base instead of buckling under it."
+   },
+   {
+    "title": "Security & compliance",
+    "body": "Authentication, audit trails, encryption, and privacy designed in — ready for the security reviews that bigger customers will run on you."
+   }
+  ],
+  "audience": [
+   "Founders validating an idea",
+   "Startups scaling after launch",
+   "Businesses turning a service into software"
+  ],
+  "useCases": [
+   {
+    "title": "MVP launch",
+    "body": "The smallest version a customer will pay for — designed, built and launched properly, so it can grow."
+   },
+   {
+    "title": "Multi-tenant platform",
+    "body": "Organisations, roles, permissions and data isolation, ready for your first enterprise customer."
+   },
+   {
+    "title": "Billing & subscriptions",
+    "body": "Plans, trials, upgrades, invoices and usage metering with Stripe, including the edge cases."
+   },
+   {
+    "title": "Taking over an existing SaaS",
+    "body": "Code audit, stabilisation and a clear roadmap when your product needs a new engineering team."
+   }
+  ],
+  "related": [
+   {
+    "industry": "PropTech / Property Management",
+    "name": "Secure Living",
+    "outcome": "Rent collection moved from phone calls to escrow-backed M-Pesa payments."
+   },
+   {
+    "industry": "Logistics / Warehousing",
+    "name": "Loadbetter",
+    "outcome": "Whiteboards and spreadsheets replaced by one live warehouse system."
+   },
+   {
+    "industry": "Hospitality / AI SaaS",
+    "name": "StayNest",
+    "outcome": "Hotels run search, bookings and Stripe payments from one platform."
+   }
+  ],
+  "pricing": {
+   "bestWhen": "You're launching a new product or scaling one that's found its first customers",
+   "timeline": "6–10 weeks for an MVP",
+   "from": "$10,000"
+  },
+  "mvp": {
+   "heading": "Everything you need to launch.",
+   "items": [
+    "Product & UX design",
+    "Full build",
+    "Billing & subscriptions",
+    "Authentication",
+    "Admin panel",
+    "Analytics",
+    "Launch"
+   ],
+   "timeline": "6–10 weeks",
+   "from": "$10,000",
+   "cta": "Get a fixed-price MVP estimate"
+  },
+  "testimonial": {
+   "quote": "We came with a rough idea and left with a sellable product. They scoped the smallest version a customer would pay for, then built it properly so we could scale without rewrites.",
+   "name": "Liam",
+   "role": "Founder, B2B platform"
+  },
+  "faqHeading": "SaaS & Digital Products — questions, answered.",
+  "faqs": [
+   {
+    "q": "Can you build an MVP we can actually sell?",
+    "a": "Yes. We scope the smallest version a customer would genuinely pay for, build it properly rather than as throwaway, and deliberately avoid the architecture shortcuts that block growth later. You get something real to sell and learn from, on a foundation you can keep building on."
+   },
+   {
+    "q": "Do you handle billing and subscriptions?",
+    "a": "Yes — metering, plans, trials, proration, upgrades, and payments are a first-class part of the product, not an afterthought. We handle the messy edge cases (failed payments, plan changes, refunds) that quietly cost you revenue when they're done poorly."
+   },
+   {
+    "q": "Will it scale when we grow?",
+    "a": "We design multi-tenancy and infrastructure to scale from day one, with observability, CI/CD, and automated testing so growth means adding capacity, not rewriting the product. We make the expensive-to-change decisions carefully and keep the rest flexible."
+   },
+   {
+    "q": "Can you take over an existing SaaS product?",
+    "a": "Yes. We start with an audit of the code, architecture, and infrastructure, stabilise what's fragile, and then move on your roadmap. We're comfortable inheriting a codebase and making it something your team enjoys working in again."
+   },
+   {
+    "q": "How do you price and structure an engagement?",
+    "a": "We scope a clear first phase with defined outcomes and a fixed or capped budget, then work in short cycles you can see and steer. You get working software regularly and the option to adjust scope as you learn — no black box, no surprise invoices."
+   }
+  ],
+  "cta": {
+   "heading": "Get a fixed price for your MVP.",
+   "body": "Tell us about your idea. We'll send a written proposal with features, timeline and a fixed price within 1–2 days.",
+   "button": "Get a fixed-price MVP estimate"
+  }
+ },
+ "web-mobile-applications": {
+  "slug": "web-mobile-applications",
+  "title": "Web & Mobile Applications",
+  "tagline": "Portals, dashboards and platforms your customers and team rely on.",
+  "intro": "We build modern web and mobile applications that combine intuitive design with powerful functionality — fast, accessible products that customers and teams enjoy using, on desktop, iOS, and Android.",
+  "primaryCta": "Book a free strategy call",
+  "countStat": "32+",
+  "countLabel": "web & mobile projects delivered",
+  "stack": [
+   "React",
+   "Next.js",
+   "React Native",
+   "TypeScript",
+   "Node.js",
+   "NestJS",
+   "PostgreSQL",
+   "Supabase",
+   "Swift / Kotlin",
+   "Vercel / AWS"
+  ],
+  "overview": [
+   "Your web or mobile app is often the first real conversation a customer has with your business, and increasingly it's where the business actually happens. We build products that make that moment count: fast, accessible, and engineered to scale across every screen, with the kind of polish that makes people trust the product behind it.",
+   "On the web we pair thoughtful UX with solid architecture — React and Next.js front ends, secure APIs, and data models that won't fight you as features grow. On mobile, most products ship faster and cheaper cross-platform with React Native, sharing one codebase across iOS and Android; when performance or hardware access demands it, we go fully native with Swift or Kotlin. We'll tell you honestly which path fits your product and budget.",
+   "We own the full journey: discovery and UX, design, development, launch, app store releases, and the iterations that follow. We ship early, measure honestly against real usage, and refine relentlessly — because the version that wins is rarely the first one, and a product is never really finished, just continuously improved."
+  ],
+  "capabilities": [
+   {
+    "title": "Responsive web apps",
+    "body": "Modern, performant front ends built with React and Next.js that look and work right on every screen, from phones to ultrawide displays."
+   },
+   {
+    "title": "Cross-platform & native mobile",
+    "body": "iOS and Android from one React Native codebase that feels genuinely native — or fully native Swift and Kotlin where performance and hardware access make it the right call."
+   },
+   {
+    "title": "APIs & backends",
+    "body": "Secure, well-documented services, authentication, and real-time infrastructure that power your web and mobile apps reliably at scale."
+   },
+   {
+    "title": "Performance & accessibility",
+    "body": "Core Web Vitals, smooth mobile interactions, and WCAG 2.1 AA accessibility engineered in from day one, with budgets so speed doesn't quietly regress."
+   },
+   {
+    "title": "App store delivery",
+    "body": "We manage submission, review, signing, provisioning, and staged rollout end to end — including the bits that trip teams up on their first release."
+   },
+   {
+    "title": "Monitoring & iteration",
+    "body": "Crash reporting, performance and usage analytics, and a release cadence that turns real-world feedback into steady improvement."
+   }
+  ],
+  "audience": [
+   "Businesses needing a customer portal",
+   "Teams needing dashboards",
+   "Startups launching an app",
+   "Companies with a slow or outdated web app or mobile app"
+  ],
+  "useCases": [
+   {
+    "title": "Customer portals",
+    "body": "Secure self-service for your customers: accounts, orders, documents, payments and support."
+   },
+   {
+    "title": "Admin dashboards",
+    "body": "Real-time views of the numbers and operations your team runs the business on."
+   },
+   {
+    "title": "Booking platforms",
+    "body": "Availability, scheduling, payments and reminders on web and mobile."
+   },
+   {
+    "title": "Marketplaces",
+    "body": "Two-sided platforms with listings, search, messaging, payments and reviews."
+   },
+   {
+    "title": "Consumer & field-service apps",
+    "body": "iOS and Android apps for customers or teams on the move, with offline support."
+   },
+   {
+    "title": "Rebuilds & app rescue",
+    "body": "Performance fixes, modernisation, or taking over a stalled web or mobile app."
+   }
+  ],
+  "mobile": {
+   "heading": "Native-feeling apps for iOS and Android.",
+   "body": "One React Native codebase for both stores — or fully native where it counts. We handle design, build, store submission and releases end to end.",
+   "platforms": [
+    "iOS",
+    "Android"
+   ]
+  },
+  "related": [
+   {
+    "industry": "TravelTech / AI",
+    "name": "Just Travel",
+    "outcome": "AI trip planning and booking across the web and the mobile app."
+   },
+   {
+    "industry": "Healthcare / Clinical Trials",
+    "name": "Mural Link",
+    "outcome": "One platform for clinical-trial payments, travel and messaging."
+   },
+   {
+    "industry": "Healthcare / Medical Records",
+    "name": "EMR System",
+    "outcome": "Patient history available in seconds behind role-based access."
+   }
+  ],
+  "pricing": {
+   "bestWhen": "You need a portal, dashboard, platform or app your customers and team rely on",
+   "timeline": "6–12 weeks for a first release",
+   "from": "$10,000"
+  },
+  "testimonial": {
+   "quote": "The Techknock Labs team supported our developers as full-stack engineers in Node.js and React for almost a year. I'd highly recommend them to anyone considering them for a project.",
+   "name": "Jaclyn",
+   "role": "CEO & Founder, Tech startup"
+  },
+  "faqHeading": "Web & Mobile Applications — questions, answered.",
+  "faqs": [
+   {
+    "q": "Web app, mobile app, or both?",
+    "a": "It depends on where your users are and what they need to do. Many products start with a responsive web app and add mobile once usage proves it out; others are mobile-first from day one. In discovery we'll give you a straight recommendation based on your users, budget, and roadmap."
+   },
+   {
+    "q": "Cross-platform or native mobile?",
+    "a": "Most products ship faster and more cost-effectively cross-platform with React Native, and modern tooling means it genuinely feels native. We go fully native when performance, heavy animation, or specific hardware demands it — and we'll tell you which fits your case."
+   },
+   {
+    "q": "Can you improve our existing site or app?",
+    "a": "Yes — a lot of our work is exactly this. We audit performance, stability, UX, and architecture, fix what actually moves the needle, and lay out a path for the rest. You don't need a rewrite to get a meaningfully better product."
+   },
+   {
+    "q": "Do you handle app store submission?",
+    "a": "Yes — store listings and assets, review submissions for Apple and Google, code signing, provisioning, and staged rollout. We've been through the rejections and edge cases, so your launch isn't where you learn them."
+   },
+   {
+    "q": "Who owns the code and how is handover managed?",
+    "a": "You own the code outright. We keep it clean, documented, and covered by tests, and we hand over with the context your team needs — or stay on to support and extend it if you'd rather we did."
+   }
+  ],
+  "cta": {
+   "heading": "Let's plan your web or mobile app.",
+   "body": "Book a free strategy call. We'll recommend web, mobile or both, and send a clear estimate within 1–2 days.",
+   "button": "Book a free strategy call"
+  }
+ },
+ "enterprise-systems": {
+  "slug": "enterprise-systems",
+  "title": "Enterprise Systems",
+  "tagline": "Custom systems, cleanly engineered.",
+  "intro": "We develop enterprise solutions that simplify operations, improve collaboration, and provide organizations with the tools they need to scale confidently.",
+  "primaryCta": "Book a free strategy call",
+  "countStat": "10+",
+  "countLabel": "enterprise projects delivered",
+  "stack": [
+   "TypeScript",
+   "Node.js",
+   "NestJS",
+   "Python",
+   "PostgreSQL",
+   "MongoDB",
+   "Docker",
+   "Odoo / ERP APIs",
+   "AWS / Azure"
+  ],
+  "overview": [
+   "Off-the-shelf software forces your business to bend around its limits, and the workarounds pile up until your real process lives in spreadsheets, email threads, and people's heads. We build the opposite: systems shaped precisely to how you actually operate, with the flexibility to evolve as you do, and the security and reliability that operating at scale demands.",
+   "Enterprise work is less about novelty and more about getting the fundamentals right under pressure. Clean architecture, sensible data models, real test coverage, access control, and documentation that makes the next change — and the next hire — painless. We care about what you'll notice years later: software that's a pleasure to extend, not a liability you're afraid to touch.",
+   "We're comfortable in messy realities: integrating with systems you can't replace, migrating ageing platforms without halting the business, and meeting the compliance and audit requirements your industry imposes. The goal is a system that quietly does its job, scales with you, and gives your team — not a vendor — confidence and control over how the business runs."
+  ],
+  "capabilities": [
+   {
+    "title": "Internal tools & portals",
+    "body": "CRMs, booking engines, admin dashboards, and workflow automation built to your exact process — replacing the spreadsheets and manual steps holding your team back."
+   },
+   {
+    "title": "Legacy modernisation",
+    "body": "Incremental migration of ageing systems to modern, supportable stacks, with every cutover rehearsed so the business keeps running throughout."
+   },
+   {
+    "title": "Workflow & process automation",
+    "body": "Mapping how work actually flows, then automating the repetitive, error-prone steps and giving managers visibility they didn't have before."
+   },
+   {
+    "title": "Security & compliance",
+    "body": "Role-based access control, audit trails, encryption, and data protection engineered in from the start, to the standards your sector requires."
+   },
+   {
+    "title": "Integration & data",
+    "body": "Connecting the systems you already run into a coherent whole, with a reliable single source of truth instead of conflicting copies."
+   },
+   {
+    "title": "Quality engineering",
+    "body": "Automated testing, CI/CD, code review, and monitoring on every project — so changes are safe to make and problems surface early, not in production."
+   }
+  ],
+  "audience": [
+   "Businesses running on spreadsheets",
+   "Companies outgrowing off-the-shelf tools",
+   "Teams with legacy systems"
+  ],
+  "useCases": [
+   {
+    "title": "Internal tools",
+    "body": "Admin panels and back-office apps shaped exactly around how your team works."
+   },
+   {
+    "title": "Custom CRMs",
+    "body": "Track customers, deals and service history your way, connected to the rest of your stack."
+   },
+   {
+    "title": "Booking engines",
+    "body": "Scheduling and resource allocation for complex, multi-location operations."
+   },
+   {
+    "title": "Workflow systems",
+    "body": "Approvals, hand-offs and automation that replace email chains and spreadsheets."
+   },
+   {
+    "title": "Legacy modernisation",
+    "body": "Move ageing systems to a modern stack in phases, without stopping the business."
+   }
+  ],
+  "related": [
+   {
+    "industry": "Electronics / Procurement",
+    "name": "CrossMyPart",
+    "outcome": "Sourcing connected straight into Odoo ERP — no more re-keying orders."
+   },
+   {
+    "industry": "Healthcare / Medical Records",
+    "name": "EMR System",
+    "outcome": "Clinic records moved from paper to a secure digital system."
+   },
+   {
+    "industry": "EdTech / E-Learning",
+    "name": "BrainCity",
+    "outcome": "One multi-tenant platform for students, instructors and organisations."
+   }
+  ],
+  "pricing": {
+   "bestWhen": "Spreadsheets, legacy software or off-the-shelf tools are holding your operations back",
+   "timeline": "8–16 weeks, delivered in phases",
+   "from": "$15,000"
+  },
+  "testimonial": {
+   "quote": "They are experts in development and in the entire delivery process. Extremely good communication and better than 99% of the developers I've worked with in the past.",
+   "name": "Matthew",
+   "role": "CTO, SaaS startup"
+  },
+  "faqHeading": "Enterprise Systems — questions, answered.",
+  "faqs": [
+   {
+    "q": "Can you modernise our legacy system?",
+    "a": "Yes, and it's some of our favourite work. We migrate incrementally rather than attempting a risky big-bang rewrite, run old and new side by side where it helps, and rehearse every cutover — so the business keeps running while an ageing system moves to a modern, supportable stack."
+   },
+   {
+    "q": "How do you handle security and compliance?",
+    "a": "Access control, audit trails, encryption, and data protection are designed in from the start, and built to meet your compliance requirements (GDPR, SOC 2, HIPAA). We treat security as a property of the architecture, not a checklist bolted on before launch."
+   },
+   {
+    "q": "Will our team be able to maintain it?",
+    "a": "Yes. We write clean, documented, well-tested code, favour boring and reliable over clever and fragile, and hand over with the context your team needs to own it confidently — or we stay on for support and enhancements if you'd prefer that."
+   },
+   {
+    "q": "Can you integrate with the systems we can't replace?",
+    "a": "Almost always. We're used to working alongside ERPs, finance systems, and bespoke databases that aren't going anywhere, connecting to them through APIs, files, or custom adapters so the new system fits your real environment rather than assuming a clean slate."
+   },
+   {
+    "q": "How do you manage risk on a large project?",
+    "a": "We break the work into phases that each deliver something usable, keep you close with regular working demos, and tackle the riskiest unknowns early. You see progress continuously and can adjust direction, rather than waiting months to find out whether it worked."
+   }
+  ],
+  "cta": {
+   "heading": "Let's replace the spreadsheets.",
+   "body": "Book a free strategy call. We'll map your workflow and recommend a phased plan with a clear estimate within 1–2 days.",
+   "button": "Book a free strategy call"
+  }
+ }
+}
