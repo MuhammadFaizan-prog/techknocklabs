@@ -54,7 +54,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           </div>
         </header>
         <div data-wipe className="relative mt-14 aspect-[16/9] overflow-hidden rounded-[14px] border border-hairline bg-surface md:aspect-[21/9]">
-          <Image src={coverFor(p.category)} alt="" fill priority sizes="(min-width: 1440px) 1340px, 100vw" className="object-cover" />
+          <Image src={coverFor(p.slug)} alt="" fill priority sizes="(min-width: 1440px) 1340px, 100vw" className="object-cover" />
         </div>
         <div className="mt-16 border-t border-hairline pt-14 md:grid md:grid-cols-12 md:gap-8">
           <div className="prose-door max-w-[68ch] md:col-span-8 md:col-start-4" dangerouslySetInnerHTML={{ __html: p.html }} />

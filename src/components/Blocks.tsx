@@ -108,7 +108,7 @@ export function BlogCards({ items }: { items: Post[] }) {
       {items.map((p) => (
         <li key={p.slug} className="group relative">
           <div className="cover-zoom relative aspect-[16/9] overflow-hidden rounded-[14px] border border-hairline bg-surface">
-            <Image src={coverFor(p.category)} alt="" fill sizes="(min-width: 768px) 30vw, 100vw" className="object-cover" />
+            <Image src={coverFor(p.slug)} alt="" fill sizes="(min-width: 768px) 30vw, 100vw" className="object-cover" />
           </div>
           <p className="label mt-6">
             {p.category} <span aria-hidden="true">/</span> <time dateTime={p.iso}>{p.date}</time> <span aria-hidden="true">/</span> {p.readTime}
