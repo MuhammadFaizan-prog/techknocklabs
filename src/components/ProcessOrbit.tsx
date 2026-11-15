@@ -56,6 +56,7 @@ export function ProcessOrbit() {
       const dt = Math.min(48, t - last);
       last = t;
       if (anim.current) {
+        if (anim.current.t0 < 0) anim.current.t0 = t;
         const p = Math.min(1, (t - anim.current.t0) / 900);
         angle.current = anim.current.from + (anim.current.to - anim.current.from) * EASE(p);
         if (p >= 1) anim.current = null;
@@ -106,7 +107,7 @@ export function ProcessOrbit() {
       paint();
       return;
     }
-    anim.current = { from: current, to: current + delta, t0: performance.now() };
+    anim.current = { from: current, to: current + delta, t0: -1 }; // stamped on the next frame
   };
 
   const release = () => {
