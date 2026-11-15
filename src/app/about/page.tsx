@@ -98,7 +98,7 @@ export default function AboutPage() {
 
       <section aria-labelledby="team" className="border-t border-hairline">
         <div className="shell py-24 md:py-32">
-          <Chapter id="team" n="05" label="Our executive team" title="The people behind your project" intro={<p>Your project is built by the people below, not outsourced or passed to someone you&apos;ve never met.</p>} />
+          <Chapter id="team" n="05" label="Our Executive Team" title="The people behind your project" intro={<p>Your project is built by the people below, not outsourced or passed to someone you&apos;ve never met.</p>} />
           <ul className="mt-16 grid border-t border-hairline sm:grid-cols-2 lg:grid-cols-5">
             {team.map((m) => (
               <li key={m.role} className="border-b border-hairline py-6 sm:pr-6">
@@ -117,12 +117,12 @@ export default function AboutPage() {
             n="06"
             label="Where we are"
             title="US & UK, built by a global team"
-            intro={<p>We&apos;re based in the UK and the US, with a global engineering team. We work in UK and US business hours, so you always get live time with your team, plus senior engineers at a cost that makes sense. This setup gives you senior engineers at a cost that makes sense, without compromising on communication or quality.</p>}
+            intro={<><p>We&apos;re based in the UK and the US, with a global engineering team. We work in UK and US business hours, so you always get live time with your team, plus senior engineers at a cost that makes sense.</p><p className="mt-4">This setup gives you senior engineers at a cost that makes sense, without compromising on communication or quality.</p></>}
           />
           <ul className="mt-16 grid gap-0 border-t border-hairline md:grid-cols-3">
             {offices.map((o, i) => (
               <li key={o.code} className={`border-b border-hairline py-8 md:border-b-0 md:px-8 ${i === 0 ? "md:pl-0" : "md:border-l"}`}>
-                <p className="label">{o.code}</p>
+                <p className="text-[28px] leading-none" aria-hidden="true">{o.flag}</p>
                 <h3 className="mt-6 font-serif text-[40px] leading-none text-bone">{o.region}</h3>
                 <address className="mt-4 max-w-[34ch] text-[15px] not-italic text-muted">{o.address}</address>
                 <p className="label mt-6 text-bone">{o.hours}</p>

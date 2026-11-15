@@ -163,14 +163,17 @@ export default async function CasePage({ params }: PageProps<"/work/[slug]">) {
 
       <nav aria-label="Next case study" className="border-t border-hairline">
         <Link href={`/work/${next.slug}`} className="group shell flex flex-col gap-3 py-16 md:flex-row md:items-end md:justify-between">
-          <span className="label">Next case study</span>
+          <span className="label">Next project</span>
           <span className="display-serif text-[clamp(56px,8vw,128px)] text-bone/80 transition-colors group-hover:text-bone">{next.name}</span>
         </Link>
       </nav>
 
       <DoorOpenCta
         heading="Want results like these?"
-        body="Tell us what you're building. We'll show you relevant work and give you a clear estimate within 1-2 days."
+        body="Tell us about your product. The first consultation is on us."
+        button="Let's talk"
+        buttonHref="/contact"
+        messageLink={false}
       />
     </>
   );

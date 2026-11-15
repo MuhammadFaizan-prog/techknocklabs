@@ -60,7 +60,7 @@ export default function ContactPage() {
           <div className="flex flex-col gap-4 md:col-span-4 md:items-end">
             <KnockButton />
             <a href={CAL_URL} target="_blank" rel="noopener noreferrer" className="link-underline text-[14px] text-muted">
-              Opens cal.com/techknock/30min in a new tab
+              Calendar not loading? Open it in a new tab →
             </a>
           </div>
         </div>

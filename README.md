@@ -1,6 +1,6 @@
-# Techknock Labs — "The Door Ajar" redesign
+# Techknock Labs
 
-Portfolio redesign of techknocklabs.com (their real copy and images). Not affiliated; nothing is sent anywhere.
+Unofficial redesign of techknocklabs.com ("The Door Ajar"), using their official copy and images verbatim. Not affiliated; nothing is sent anywhere.
 
 ```bash
 npm install

@@ -282,3 +282,20 @@ details[open] .faq-icon { transform: rotate(45deg); }
 }
 
 }
+
+/* Hero rotating line (their site: "We build the next generation of" + rotating item).
+   Five items plus a repeat of the first so the loop wraps seamlessly. Reduced motion: static first item. */
+.rotator { display: inline-block; height: 1.55em; overflow: hidden; vertical-align: bottom; }
+.rotator-track { display: flex; flex-direction: column; }
+.rotator-track > span { display: block; height: 1.55em; line-height: 1.55em; white-space: nowrap; }
+@media (prefers-reduced-motion: no-preference) {
+  .rotator-track { animation: rotateWhat 12.5s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+}
+@keyframes rotateWhat {
+  0%, 16% { transform: translateY(0); }
+  20%, 36% { transform: translateY(-1.55em); }
+  40%, 56% { transform: translateY(-3.1em); }
+  60%, 76% { transform: translateY(-4.65em); }
+  80%, 96% { transform: translateY(-6.2em); }
+  100% { transform: translateY(-7.75em); }
+}

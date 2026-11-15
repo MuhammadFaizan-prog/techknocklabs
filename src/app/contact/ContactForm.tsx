@@ -216,7 +216,7 @@ export function ContactForm({ initial = {} }: { initial?: Partial<Values> }) {
           <span className="ring" aria-hidden="true" />
           <span className="ring" aria-hidden="true" />
           <span className="ring" aria-hidden="true" />
-          Send project details
+          Submit
         </button>
       </div>
       <p className="label">Portfolio demo: this form validates in your browser and does not send anything.</p>

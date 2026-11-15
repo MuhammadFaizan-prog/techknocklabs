@@ -47,7 +47,7 @@ export default function ServicesPage() {
                   </p>
                   <p className="mt-4 max-w-[56ch] text-[16px] text-muted">{o.body}</p>
                   <p className="label mt-5">{o.tags.join(" / ")}</p>
-                  <p className="mt-8"><span className="link-underline text-[15px] text-bone">See {s.title}</span></p>
+                  <p className="mt-8"><span className="link-underline text-[15px] text-bone">Explore {s.title}</span></p>
                 </div>
                 <div className="photo-zoom relative aspect-[16/10] overflow-hidden rounded-[14px] bg-surface md:col-span-6">
                   <Image src={o.image} alt={o.imageAlt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />

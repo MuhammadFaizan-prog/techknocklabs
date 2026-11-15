@@ -256,9 +256,9 @@ export const industries = [
 ];
 
 export const offices = [
-  { region: "United Kingdom", code: "UK", address: "215a 650 Avebury Boulevard, Milton Keynes, England, MK9 3FQ", hours: "UK business hours" },
-  { region: "United States", code: "US", address: "228 Park Ave S, New York, NY 10003, USA", hours: "US business hours" },
-  { region: "Global engineering team", code: "Global", address: "Senior engineers across time zones, overlapping with your working day.", hours: "Live overlap with UK & US" },
+  { region: "United Kingdom", code: "UK", flag: "🇬🇧", address: "215a 650 Avebury Boulevard, Milton Keynes, England, MK9 3FQ", hours: "UK business hours" },
+  { region: "United States", code: "US", flag: "🇺🇸", address: "228 Park Ave S, New York, NY 10003, USA", hours: "US business hours" },
+  { region: "Global engineering team", code: "Global", flag: "🌍", address: "Senior engineers across time zones, overlapping with your working day.", hours: "Live overlap with UK & US" },
 ];
 
 // Team: only the CEO is named on their site; the rest are published as roles.

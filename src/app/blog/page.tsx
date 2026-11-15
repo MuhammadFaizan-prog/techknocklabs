@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { PageHero } from "@/components/Blocks";
+import { DoorOpenCta, PageHero } from "@/components/Blocks";
 import { posts } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -47,6 +47,11 @@ export default function BlogPage() {
           ))}
         </ul>
       </section>
+
+      <DoorOpenCta
+        heading="Have a project in mind?"
+        body="Tell us what you're trying to achieve. We'll recommend the right approach and give you a clear estimate within 1-2 days."
+      />
     </>
   );
 }

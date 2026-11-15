@@ -23,6 +23,7 @@ import {
   posts,
   reasons,
   resources,
+  rotatingWhat,
   services,
   serviceOverview,
   testimonials,
@@ -66,9 +67,18 @@ export default function Home() {
               <span className="display-serif block text-[clamp(88px,12.4vw,184px)] italic leading-[0.88]">at your</span>
               <span className="display-serif block text-[clamp(88px,12.4vw,184px)] italic leading-[0.88]">door.</span>
             </h1>
-            <p className="mt-8 max-w-[44ch] text-[17px] leading-[1.55] text-bone/80">
-              We build the next generation of custom AI apps, SaaS products, web apps, AI agents and automations.
+            <p className="mt-8 text-[17px] leading-[1.55] text-bone">
+              We build the next generation of{" "}
+              <span className="rotator" aria-hidden="true">
+                <span className="rotator-track">
+                  {[...rotatingWhat, rotatingWhat[0]].map((w, i) => (
+                    <span key={i}>{w}.</span>
+                  ))}
+                </span>
+              </span>
+              <span className="sr-only">{rotatingWhat.join(", ")}.</span>
             </p>
+            <p className="mt-5 max-w-[56ch] text-[17px] leading-[1.55] text-bone/80">{heroIntro}</p>
             <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-5">
               <KnockButton />
               <Link href="/work" className="link-underline text-[15px] text-bone">See our work</Link>
@@ -111,7 +121,7 @@ export default function Home() {
 
       {/* 02 — What we do */}
       <section aria-labelledby="ch-02" className="shell py-24 md:py-36">
-        <Chapter id="ch-02" n="02" label="What we do" title="Intelligent solutions. Lasting impact." intro={<p>{heroIntro}</p>} />
+        <Chapter id="ch-02" n="02" label="What we do" title="Intelligent solutions. Lasting impact." />
         <ol className="mt-16 border-t border-hairline md:mt-24">
           {services.map((s, i) => {
             const o = serviceOverview[s.slug];
@@ -145,7 +155,7 @@ export default function Home() {
           })}
         </ol>
         <p className="mt-10">
-          <Link href="/services" className="link-underline text-[15px] text-bone">See all services</Link>
+          <Link href="/services" className="link-underline text-[15px] text-bone">All services</Link>
         </p>
       </section>
 
@@ -176,7 +186,7 @@ export default function Home() {
                     ))}
                   </ul>
                   <p className="mt-7">
-                    <Link href={`/work/${clone.slug}`} className="link-underline text-[15px] text-bone">Read the Clone Caller case study</Link>
+                    <Link href={`/work/${clone.slug}`} className="link-underline text-[15px] text-bone">Read case study</Link>
                   </p>
                 </div>
               </div>
@@ -205,7 +215,7 @@ export default function Home() {
                     ))}
                   </ul>
                   <p className="mt-8">
-                    <Link href={`/work/${c.slug}`} className="link-underline text-[15px] text-bone">Read the {c.name} case study</Link>
+                    <Link href={`/work/${c.slug}`} className="link-underline text-[15px] text-bone">Read case study</Link>
                   </p>
                 </div>
                 <Link href={`/work/${c.slug}`} tabIndex={-1} aria-hidden="true" className="photo-zoom relative block aspect-[16/10] overflow-hidden rounded-[14px] bg-surface md:col-span-7">

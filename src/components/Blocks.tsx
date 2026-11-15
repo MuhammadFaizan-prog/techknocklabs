@@ -133,7 +133,7 @@ export function CaseRow({ c, industry, priority = false, flip = false }: { c: Ca
         </ul>
         <p className="mt-8 md:mt-auto md:pt-8">
           <Link href={`/work/${c.slug}`} className="link-underline text-[15px] text-bone after:absolute after:inset-0">
-            Read the {c.name} case study
+            Read case study
           </Link>
         </p>
       </div>
@@ -148,12 +148,14 @@ export function DoorOpenCta({
   body,
   button = "Book a free strategy call",
   buttonHref = CAL_URL,
+  messageLink = true,
 }: {
   n?: string;
   heading: string;
   body: string;
   button?: string;
   buttonHref?: string;
+  messageLink?: boolean;
 }) {
   return (
     <section aria-labelledby="cta-heading" className="relative isolate overflow-clip border-t border-hairline">
@@ -176,7 +178,7 @@ export function DoorOpenCta({
             <p className="max-w-[44ch] text-[17px] text-bone/85">{body}</p>
             <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
               <KnockButton label={button} href={buttonHref} />
-              <Link href="/contact" className="link-underline text-[15px] text-bone">or send us a message</Link>
+              {messageLink ? <Link href="/contact" className="link-underline text-[15px] text-bone">or send us a message</Link> : null}
             </div>
           </div>
         </div>
