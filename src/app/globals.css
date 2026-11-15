@@ -280,9 +280,12 @@ details[open] .faq-icon { transform: rotate(45deg); }
 
 /* Hero rotating line (their site: "We build the next generation of" + rotating item).
    Five items plus a repeat of the first so the loop wraps seamlessly. Reduced motion: static first item. */
-.rotator { display: inline-block; height: 1.55em; overflow: hidden; vertical-align: bottom; }
-.rotator-track { display: flex; flex-direction: column; }
-.rotator-track > span { display: block; height: 1.55em; line-height: 1.55em; white-space: nowrap; }
+/* Slot: one fixed-height clipped line, as wide as the longest phrase (column flex sizes to widest item).
+   Phones (<640px): the slot stacks on its own line so it never wraps mid-slot or overlaps the lead-in. */
+.rotator { display: block; position: relative; height: 1.55em; line-height: 1.55em; overflow: hidden; contain: paint; }
+@media (min-width: 640px) { .rotator { display: inline-block; vertical-align: top; } }
+.rotator-track { display: flex; flex-direction: column; will-change: transform; }
+.rotator-track > span { display: block; flex: none; height: 1.55em; line-height: 1.55em; white-space: nowrap; }
 @media (prefers-reduced-motion: no-preference) {
   .rotator-track { animation: rotateWhat 12.5s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
 }
@@ -453,6 +456,10 @@ details[open] .faq-icon { transform: rotate(45deg); }
 }
 @media (prefers-reduced-motion: no-preference) and (hover: hover) {
   .spot:hover .spot-glow { opacity: 1; }
+}
+/* Touch / no-hover: a subtle static glow in the top-right instead of a pointer-follow light. */
+@media (hover: none) {
+  .spot-glow { left: 88%; top: 8%; transform: none; opacity: 0.55; transition: none; }
 }
 
 /* --- Button light-sweep (a thin band of light crosses the pill on hover/focus) --- */

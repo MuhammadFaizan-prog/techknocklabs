@@ -252,7 +252,7 @@ export default function Home() {
           <Chapter id="ch-05" n="05" label="Why Techknock Labs" title="Why teams choose Techknock Labs" />
           <ol data-stagger className="mt-16 grid gap-4 md:mt-24 md:grid-cols-6">
             {reasons.map((r, i) => (
-              <li key={r.title} className={`spot spot-card lift relative flex flex-col overflow-hidden rounded-[14px] border border-hairline bg-surface/70 p-7 hover:border-[#4a4640] md:p-8 ${["md:col-span-4", "md:col-span-2", "md:col-span-2", "md:col-span-2", "md:col-span-2"][i]}`}>
+              <li key={r.title} className={`spot spot-card lift relative flex flex-col overflow-hidden rounded-[14px] border border-hairline bg-surface/70 p-7 hover:border-[#4a4640] md:p-8 ${["md:col-span-6 lg:col-span-4", "md:col-span-3 lg:col-span-2", "md:col-span-3 lg:col-span-2", "md:col-span-3 lg:col-span-2", "md:col-span-3 lg:col-span-2"][i]}`}>
                 <span aria-hidden="true" className="spot-glow" />
                 <p className="label tabular flex items-center gap-2">{i === 0 ? <span className="pulse-dot" aria-hidden="true" /> : null}{String(i + 1).padStart(2, "0")}</p>
                 <h3 className={`mt-10 font-medium tracking-[-0.02em] text-bone ${i === 0 ? "text-[clamp(30px,3vw,44px)] leading-[1.08]" : "text-[24px] leading-[1.15]"}`}>{r.title}</h3>
