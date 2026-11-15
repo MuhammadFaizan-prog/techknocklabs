@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Testimonial } from "@/content/site";
+import { SplitWords } from "./Motion";
 
 /** One large pull-quote at a time. Manual cycling only (no auto-rotate). */
 export function Testimonials({ items }: { items: Testimonial[] }) {
@@ -11,9 +12,9 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
   return (
     <figure className="relative" aria-roledescription="carousel" aria-label="Client testimonials">
       <div aria-live="polite" className="min-h-[340px] md:min-h-[300px]">
-        <blockquote key={i} className="quote-in font-serif text-[clamp(32px,4.4vw,64px)] leading-[1.08] tracking-[-0.015em] text-bone">
+        <blockquote key={i} className="font-serif text-[clamp(32px,4.4vw,64px)] leading-[1.08] tracking-[-0.015em] text-bone">
           <span className="text-amber" aria-hidden="true">“</span>
-          {t.quote}
+          <SplitWords text={t.quote} />
           <span className="text-amber" aria-hidden="true">”</span>
         </blockquote>
       </div>

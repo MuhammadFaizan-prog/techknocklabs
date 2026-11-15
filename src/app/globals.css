@@ -177,10 +177,8 @@ p { text-wrap: pretty; }
   .hero-in > *:nth-child(3) { animation-delay: 160ms; }
   .hero-in > *:nth-child(4) { animation-delay: 240ms; }
   .hero-in > *:nth-child(5) { animation-delay: 320ms; }
-  .hero-door { animation: doorIn 1100ms var(--ease-out) both; }
 }
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-@keyframes doorIn { from { opacity: 0; } to { opacity: 1; } }
 
 /* Services index: description opens on hover/focus (always open on touch) */
 .svc-more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 300ms var(--ease-out); }
@@ -277,9 +275,6 @@ details[open] .faq-icon { transform: rotate(45deg); }
 .chip-input:checked + .chip { border-color: var(--bone); background: var(--bone); color: var(--night); }
 .chip-input:focus-visible + .chip { outline: 2px solid var(--amber); outline-offset: 3px; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .quote-in { animation: rise 500ms var(--ease-out) both; }
-}
 
 }
 
@@ -299,3 +294,241 @@ details[open] .faq-icon { transform: rotate(45deg); }
   80%, 96% { transform: translateY(-6.2em); }
   100% { transform: translateY(-7.75em); }
 }
+
+/* ==================================================================
+   Motion pass 2026-11-15. Transform/opacity only (clip-path for the
+   door wipes). Everything below is gated on prefers-reduced-motion:
+   no-preference; reduced motion gets the static layout.
+   ================================================================== */
+
+/* --- Client logo marquee (moves left, seamless: two identical sets) --- */
+.marquee { position: relative; overflow: hidden; }
+.marquee-track { display: flex; width: max-content; }
+.marquee-set { display: flex; flex: none; align-items: center; gap: 72px; padding-right: 72px; }
+.marquee-set > li { flex: none; display: flex; height: 40px; align-items: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .marquee {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+  }
+  .marquee-track { animation: marquee 36s linear infinite; }
+  .marquee:hover .marquee-track, .marquee:focus-within .marquee-track { animation-play-state: paused; }
+}
+@keyframes marquee { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { width: auto; }
+  .marquee-set { flex: 1 1 auto; min-width: 0; flex-wrap: wrap; gap: 32px 40px; padding-right: 0; }
+  .marquee-set[aria-hidden="true"] { display: none; }
+}
+
+/* --- Masked word reveal (testimonial quote, section headings) --- */
+.split-w { display: inline-block; overflow: clip; vertical-align: top; padding: 0.06em 0.05em 0.12em; margin: -0.06em -0.05em -0.12em; }
+.split-w > span { display: inline-block; }
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-split] .split-w > span { transform: translateY(110%); opacity: 0; }
+  .js [data-split].is-in .split-w > span {
+    transform: none; opacity: 1;
+    transition: transform 600ms var(--ease-out), opacity 600ms var(--ease-out);
+    transition-delay: calc(var(--i, 0) * var(--stagger, 25ms));
+  }
+  [data-split="h"] { --stagger: 45ms; }
+}
+
+/* --- Hero title: line masks rise on load --- */
+.hero-title { display: flex; flex-direction: column; }
+.line-mask { display: block; overflow: clip; padding: 0.14em 0.12em 0.3em; margin: -0.14em -0.12em -0.3em; }
+.line-mask > span { display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in > .hero-title { animation: none; }
+  .hero-title .line-mask > span { animation: lineUp 1100ms var(--ease-out) both; }
+  .hero-title .line-mask:nth-child(1) > span { animation-delay: 120ms; }
+  .hero-title .line-mask:nth-child(2) > span { animation-delay: 240ms; }
+  .hero-title .line-mask:nth-child(3) > span { animation-delay: 360ms; }
+}
+@keyframes lineUp { from { transform: translateY(105%); } to { transform: none; } }
+
+/* --- Hero door: light spills from the slit, then a slow parallax --- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-door { animation: doorSlit 2200ms var(--ease-out) both; }
+  .hero-par { transform: scale(1.06); }
+  @supports (animation-timeline: view()) {
+    .hero-par { animation: heroPar linear both; animation-timeline: view(); animation-range: exit 0% exit 100%; }
+  }
+}
+@keyframes doorSlit {
+  0% { clip-path: inset(0 23% 0 73.5%); opacity: 0.2; }
+  35% { opacity: 1; }
+  100% { clip-path: inset(0 0 0 0); opacity: 1; }
+}
+@keyframes heroPar { from { transform: scale(1.06) translateY(0); } to { transform: scale(1.06) translateY(9%); } }
+
+/* --- Staggered fade-up for card lists --- */
+[data-stagger] > * { --si: 0; }
+[data-stagger] > *:nth-child(2) { --si: 1; }
+[data-stagger] > *:nth-child(3) { --si: 2; }
+[data-stagger] > *:nth-child(4) { --si: 3; }
+[data-stagger] > *:nth-child(5) { --si: 4; }
+[data-stagger] > *:nth-child(6) { --si: 5; }
+[data-stagger] > *:nth-child(7) { --si: 6; }
+[data-stagger] > *:nth-child(n+8) { --si: 7; }
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-stagger] > * { opacity: 0; transform: translateY(22px); }
+  .js [data-stagger].is-in > * {
+    opacity: 1; transform: none;
+    transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out),
+      translate 300ms var(--ease-out), border-color 150ms var(--ease-out), color 150ms var(--ease-out);
+    transition-delay: calc(var(--si) * 80ms), calc(var(--si) * 80ms), 0s, 0s, 0s;
+  }
+}
+
+/* --- Hover lift (uses `translate`, independent of the reveal transform) --- */
+.lift { transition: translate 300ms var(--ease-out), border-color 150ms var(--ease-out); }
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .lift:hover { translate: 0 -6px; }
+}
+
+/* --- Magnetic primary buttons (JS writes --mx/--my; pointer: fine only) --- */
+.knock { translate: var(--mx, 0) var(--my, 0); transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out), transform 150ms var(--ease-out), translate 400ms var(--ease-out); }
+
+/* --- Door wipe: images open from a centre slit --- */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-wipe] { clip-path: inset(0 49.5% 0 49.5% round 14px); }
+  .js [data-wipe].is-in { clip-path: inset(0 0 0 0 round 14px); transition: clip-path 1200ms var(--ease-out); }
+  .js [data-wipe="door"] { clip-path: inset(12% 40% 0 52%); opacity: 0.35; }
+  .js [data-wipe="door"].is-in { clip-path: inset(0 0 0 0); opacity: 1; transition: clip-path 1800ms var(--ease-out), opacity 1200ms var(--ease-out); }
+}
+
+/* --- Count-up numbers (the real value renders first; JS animates once in view) --- */
+.count { position: relative; display: inline-block; }
+.count-ghost { visibility: hidden; }
+.count-live { position: absolute; inset: 0; white-space: nowrap; }
+
+/* --- FAQ: smooth open/close where the browser supports ::details-content --- */
+@media (prefers-reduced-motion: no-preference) {
+  :root { interpolate-size: allow-keywords; }
+  details::details-content {
+    block-size: 0; overflow-y: clip;
+    transition: block-size 400ms var(--ease-out), content-visibility 400ms allow-discrete;
+  }
+  details[open]::details-content { block-size: auto; }
+  details > p { opacity: 0; transform: translateY(-6px); transition: opacity 300ms var(--ease-out), transform 400ms var(--ease-out); }
+  details[open] > p { opacity: 1; transform: none; transition-delay: 80ms; }
+}
+
+/* --- Scroll progress: a hairline of door light under the nav --- */
+.scroll-progress { display: none; }
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-progress {
+      display: block; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px;
+      background: var(--amber); box-shadow: 0 0 10px 1px rgba(242, 166, 90, 0.55);
+      transform-origin: 0 50%; transform: scaleX(0);
+      animation: progress linear both; animation-timeline: scroll(root block);
+    }
+  }
+}
+@keyframes progress { to { transform: scaleX(1); } }
+
+/* --- Route change: a soft fade (opacity only, so sticky/fixed layouts keep working) --- */
+@media (prefers-reduced-motion: no-preference) {
+  .page-fade { animation: pageFade 500ms var(--ease-out) backwards; }
+}
+@keyframes pageFade { from { opacity: 0; } }
+
+/* --- Blog covers: gentle zoom on card hover --- */
+.cover-zoom img { transition: transform 700ms var(--ease-out); }
+@media (prefers-reduced-motion: no-preference) {
+  .group:hover .cover-zoom img, .group:focus-within .cover-zoom img { transform: scale(1.04); }
+}
+
+/* --- Cursor spotlight on cards (a soft amber light that follows the pointer; transform/opacity only) --- */
+.spot { isolation: isolate; }
+.spot > *:not(.spot-glow) { position: relative; z-index: 1; }
+.spot-glow {
+  position: absolute; left: 0; top: 0; width: 420px; height: 420px; margin: -210px 0 0 -210px;
+  border-radius: 50%; pointer-events: none; z-index: 0;
+  background: radial-gradient(closest-side, rgba(242, 166, 90, 0.10), rgba(242, 166, 90, 0) 70%);
+  opacity: 0; transform: translate3d(var(--px, 50%), var(--py, 50%), 0);
+  transition: opacity 300ms var(--ease-out);
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .spot:hover .spot-glow { opacity: 1; }
+}
+
+/* --- Button light-sweep (a thin band of light crosses the pill on hover/focus) --- */
+.sweep { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; pointer-events: none; }
+.sweep::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(242, 166, 90, 0.35), transparent);
+  transform: translateX(-120%) skewX(-18deg); opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn:hover .sweep::before, .btn:focus-visible .sweep::before {
+    opacity: 1; transform: translateX(320%) skewX(-18deg);
+    transition: transform 900ms var(--ease-out), opacity 200ms linear;
+  }
+}
+
+/* --- Process: a progressive light line + step dots that light in order --- */
+.steps-line {
+  position: absolute; top: -1px; left: 0; right: 0; height: 1px; list-style: none;
+  background: var(--amber); box-shadow: 0 0 12px 1px rgba(242, 166, 90, 0.45);
+  transform-origin: 0 50%; scale: 0 1;
+}
+.step-dot { opacity: 0.35; }
+.steps.is-in .step-dot { opacity: 1; transition: opacity 400ms var(--ease-out); transition-delay: calc(var(--si) * 450ms + 300ms); }
+@media (prefers-reduced-motion: no-preference) {
+  .js .steps.is-in .steps-line { scale: 1 1; transition: scale 1800ms var(--ease-out) 200ms; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .steps-line { scale: 1 1; }
+  .step-dot { opacity: 1; }
+}
+.steps:not(.is-in) .step-dot { transition: none; }
+html:not(.js) .step-dot, html:not(.js) .steps-line { opacity: 1; scale: 1 1; }
+
+/* --- Pulsing status dot --- */
+.pulse-dot { position: relative; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--amber); }
+.pulse-dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--amber); opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .pulse-dot::after { animation: pulse 2.4s var(--ease-out) infinite; }
+}
+@keyframes pulse { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(3.2); opacity: 0; } }
+
+/* --- Glass surface (restrained) + self-playing UI loops --- */
+.glass {
+  background: color-mix(in oklab, var(--surface) 62%, transparent);
+  border: 1px solid color-mix(in oklab, var(--bone) 10%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  backdrop-filter: blur(14px) saturate(1.1);
+  box-shadow: 0 1px 0 0 color-mix(in oklab, var(--bone) 6%, transparent) inset, 0 24px 60px -24px rgba(0, 0, 0, 0.7);
+}
+.sim-node { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--amber); flex: none; position: relative; }
+.sim-node::after { content: ""; position: absolute; inset: 1px; border-radius: 50%; background: var(--amber); }
+.sim-bar { transform-origin: 0 50%; }
+@media (prefers-reduced-motion: no-preference) {
+  /* 4 steps over 8s: each node lights in turn, the bar fills, then the loop rests and restarts */
+  .sim-step { animation: simStep 8s var(--ease-out) infinite; animation-delay: calc(var(--n) * 1.4s); opacity: 0.4; }
+  .sim-step .sim-node::after { animation: simNode 8s var(--ease-out) infinite; animation-delay: calc(var(--n) * 1.4s); opacity: 0; }
+  .sim-bar { animation: simBar 8s var(--ease-out) infinite; }
+  /* streaming log: 6 lines over 7s */
+  .sim-line { animation: simLine 7s var(--ease-out) infinite; animation-delay: calc(var(--n) * 0.7s); opacity: 0; }
+  .sim-line .sim-ok { animation: simOk 7s var(--ease-out) infinite; animation-delay: calc(var(--n) * 0.7s + 0.35s); opacity: 0; }
+  .sim-bar-log { animation: simBarLog 7s var(--ease-out) infinite; }
+}
+@keyframes simStep { 0% { opacity: 0.4; } 6%, 70% { opacity: 1; } 85%, 100% { opacity: 0.4; } }
+@keyframes simNode { 0% { opacity: 0; } 6%, 70% { opacity: 1; } 85%, 100% { opacity: 0; } }
+@keyframes simBar { 0% { transform: scaleX(0); } 72% { transform: scaleX(1); } 86% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+@keyframes simLine { 0% { opacity: 0; transform: translateY(4px); } 5%, 70% { opacity: 1; transform: none; } 82%, 100% { opacity: 0; transform: none; } }
+@keyframes simOk { 0% { opacity: 0; } 4%, 66% { opacity: 1; } 78%, 100% { opacity: 0; } }
+@keyframes simBarLog { 0% { transform: scaleX(0); } 62% { transform: scaleX(1); opacity: 1; } 80%, 100% { transform: scaleX(1); opacity: 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in > .hero-show { animation-delay: 560ms; }
+  .hero-in > dl { animation-delay: 640ms; }
+}
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }

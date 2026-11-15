@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { BlogCards, DoorOpenCta } from "@/components/Blocks";
-import { SITE_URL, getPost, posts } from "@/content/site";
+import { SITE_URL, coverFor, getPost, posts } from "@/content/site";
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -52,6 +53,9 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
             </p>
           </div>
         </header>
+        <div data-wipe className="relative mt-14 aspect-[16/9] overflow-hidden rounded-[14px] border border-hairline bg-surface md:aspect-[21/9]">
+          <Image src={coverFor(p.category)} alt="" fill priority sizes="(min-width: 1440px) 1340px, 100vw" className="object-cover" />
+        </div>
         <div className="mt-16 border-t border-hairline pt-14 md:grid md:grid-cols-12 md:gap-8">
           <div className="prose-door max-w-[68ch] md:col-span-8 md:col-start-4" dangerouslySetInnerHTML={{ __html: p.html }} />
         </div>

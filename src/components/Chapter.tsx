@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { SplitWords } from "./Motion";
 
 /** Numbered chapter header — the site's wayfinding device (pinned by the brief). */
 export function Chapter({
@@ -25,7 +26,7 @@ export function Chapter({
       </p>
       <div className="md:col-span-9">
         <Tag id={id} className="max-w-[18ch] text-[clamp(40px,5.4vw,80px)] font-medium leading-[1.02] tracking-[-0.035em] text-bone">
-          {title}
+          {typeof title === "string" ? <SplitWords text={title} variant="h" /> : title}
         </Tag>
         {intro ? <div className="mt-6 max-w-[62ch] text-[17px] text-muted">{intro}</div> : null}
         {aside}

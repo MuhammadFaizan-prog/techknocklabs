@@ -11,6 +11,7 @@ export function KnockButton({ label = "Book a free strategy call", href = CAL_UR
       <span className="ring" aria-hidden="true" />
       <span className="ring" aria-hidden="true" />
       <span className="ring" aria-hidden="true" />
+      <span className="sweep" aria-hidden="true" />
       {label}
       {external ? <span className="sr-only"> (opens cal.com in a new tab)</span> : null}
     </a>

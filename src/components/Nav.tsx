@@ -46,6 +46,7 @@ export function Nav() {
         </ul>
         <div className="flex items-center justify-end gap-3">
           <a href={CAL_URL} target="_blank" rel="noopener noreferrer" className="btn btn-outline hidden sm:inline-flex">
+            <span className="sweep" aria-hidden="true" />
             Book a call<span className="sr-only"> (opens cal.com in a new tab)</span>
           </a>
           <button
@@ -66,6 +67,7 @@ export function Nav() {
           </button>
         </div>
       </nav>
+      <div aria-hidden="true" className="scroll-progress" />
       <div id="mobile-menu" hidden={!open} className="border-t border-hairline bg-night lg:hidden">
         <ul className="shell flex flex-col py-4">
           {navLinks.map((l) => (

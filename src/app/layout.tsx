@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { RevealObserver } from "@/components/Reveal";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { SITE_URL } from "@/content/site";
 import "./globals.css";
 
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main id="main" className="flex-1">{children}</main>
         <Footer />
         <RevealObserver />
+        <SmoothScroll />
       </body>
     </html>
   );

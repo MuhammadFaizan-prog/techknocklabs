@@ -5,6 +5,8 @@ import { Chapter } from "@/components/Chapter";
 import { KnockButton } from "@/components/KnockButton";
 import { FaqList } from "@/components/Faq";
 import { Testimonials } from "@/components/Testimonials";
+import { CountUp } from "@/components/CountUp";
+import { AgentLog, ProcessShowcase } from "@/components/Showcase";
 import {
   BlogCards,
   ClientLogos,
@@ -51,21 +53,21 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[72%_50%]"
+            className="hero-par object-cover object-[72%_50%]"
           />
           <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0.85)_0%,rgba(10,10,10,0.2)_45%,rgba(10,10,10,0)_100%)]" />
           <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(0deg,#0a0a0a,rgba(10,10,10,0))]" />
         </div>
 
-        <div className="shell flex min-h-[100svh] flex-col pt-[calc(var(--nav-h)+56px)] md:pt-[calc(var(--nav-h)+72px)]">
+        <div className="shell relative flex min-h-[100svh] flex-col pt-[calc(var(--nav-h)+56px)] md:pt-[calc(var(--nav-h)+72px)]">
           <div className="hero-in flex flex-1 flex-col">
             <p className="label">
               <span className="text-bone">01</span> — Software development · AI solutions
             </p>
-            <h1 id="hero-title" className="mt-8 text-bone">
-              <span className="block text-[clamp(52px,7vw,104px)] font-medium leading-[1] tracking-[-0.045em]">Tech knocks</span>
-              <span className="display-serif block text-[clamp(88px,12.4vw,184px)] italic leading-[0.88]">at your</span>
-              <span className="display-serif block text-[clamp(88px,12.4vw,184px)] italic leading-[0.88]">door.</span>
+            <h1 id="hero-title" className="hero-title mt-8 text-bone">
+              <span className="line-mask text-[clamp(52px,7vw,104px)] font-medium leading-[1] tracking-[-0.045em]"><span>Tech knocks</span></span>
+              <span className="line-mask display-serif text-[clamp(88px,12.4vw,184px)] italic leading-[0.88]"><span>at your</span></span>
+              <span className="line-mask display-serif text-[clamp(88px,12.4vw,184px)] italic leading-[0.88]"><span>door.</span></span>
             </h1>
             <p className="mt-8 text-[17px] leading-[1.55] text-bone">
               We build the next generation of{" "}
@@ -90,6 +92,10 @@ export default function Home() {
               <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(0deg,#0a0a0a,rgba(10,10,10,0))]" />
             </div>
 
+            <div className="hero-show pointer-events-none absolute right-[var(--gutter)] top-[calc(100svh-360px)] hidden w-[320px] lg:block">
+              <ProcessShowcase />
+            </div>
+
             <dl className="mt-auto grid grid-cols-1 border-t border-hairline pt-0 sm:grid-cols-3 md:mt-auto">
               {[
                 ["138+", "projects delivered"],
@@ -105,7 +111,7 @@ export default function Home() {
                   ) : (
                     <>
                       <dt className="label order-2">{l === "on Clutch" ? "on Clutch" : l}</dt>
-                      <dd className="tabular order-1 text-[20px] font-medium text-bone">{v}</dd>
+                      <dd className="tabular order-1 text-[20px] font-medium text-bone"><CountUp value={v} /></dd>
                     </>
                   )}
                 </div>
@@ -122,34 +128,30 @@ export default function Home() {
       {/* 02 — What we do */}
       <section aria-labelledby="ch-02" className="shell py-24 md:py-36">
         <Chapter id="ch-02" n="02" label="What we do" title="Intelligent solutions. Lasting impact." />
-        <ol className="mt-16 border-t border-hairline md:mt-24">
+        <ol data-stagger className="bento mt-16 grid gap-4 md:mt-24 md:grid-cols-6">
           {services.map((s, i) => {
             const o = serviceOverview[s.slug];
+            const big = i === 0;
+            const span = ["md:col-span-6 lg:col-span-4 lg:row-span-2", "md:col-span-3 lg:col-span-2", "md:col-span-3 lg:col-span-2", "md:col-span-3", "md:col-span-3"][i];
             return (
-              <li key={s.slug} className="svc-row relative border-b border-hairline">
-                <div className="grid gap-4 py-8 md:grid-cols-12 md:gap-8 md:py-10">
-                  <p className="label tabular md:col-span-1 md:pt-5">
-                    <span className="svc-dot mr-2 hidden md:inline-block h-[7px] w-[7px] rounded-full bg-amber align-middle" aria-hidden="true" />
-                    {String(i + 1).padStart(2, "0")}
-                  </p>
-                  <div className="md:col-span-8">
-                    <h3 className="svc-name text-[clamp(34px,4.6vw,68px)] font-medium leading-[1.04] tracking-[-0.035em] text-bone">
-                      <Link href={`/services/${s.slug}`} className="after:absolute after:inset-0 focus-visible:outline-none">
+              <li key={s.slug} className={`group spot lift relative flex flex-col overflow-hidden rounded-[14px] border border-hairline bg-surface/70 p-7 hover:border-[#4a4640] md:p-8 ${span}`}>
+                <span aria-hidden="true" className="spot-glow" />
+                <div className="flex items-center justify-between">
+                  <p className="label tabular">{String(i + 1).padStart(2, "0")}</p>
+                  <p className="label text-right"><span className="text-bone"><CountUp value={o.count} /></span> {o.countLabel}</p>
+                </div>
+                <div className={big ? "mt-10 grid gap-8 lg:grid-cols-[1fr_280px] lg:items-end" : "mt-8"}>
+                  <div>
+                    <h3 className={`font-medium leading-[1.04] tracking-[-0.03em] text-bone ${big ? "text-[clamp(34px,3.8vw,60px)]" : "text-[28px]"}`}>
+                      <Link href={`/services/${s.slug}`} className="link-quiet after:absolute after:inset-0 group-hover:text-white">
                         {s.title}
                       </Link>
                     </h3>
-                    <div className="svc-more">
-                      <div>
-                        <p className="max-w-[60ch] pt-5 text-[16px] text-muted">{o.body}</p>
-                        <p className="label pt-4">{o.tags.join(" / ")}</p>
-                      </div>
-                    </div>
+                    <p className={`pt-5 text-[15px] text-muted ${big ? "max-w-[52ch] text-[16px]" : ""}`}>{o.body}</p>
                   </div>
-                  <p className="md:col-span-3 md:pt-3 md:text-right">
-                    <span className="display-serif tabular block text-[56px] text-bone md:text-[72px]">{o.count}</span>
-                    <span className="label">{o.countLabel}</span>
-                  </p>
+                  {big ? <div className="hidden md:block"><AgentLog /></div> : null}
                 </div>
+                <p className="label mt-auto pt-8 text-[12px]">{o.tags.join(" / ")}</p>
               </li>
             );
           })}
@@ -218,7 +220,7 @@ export default function Home() {
                     <Link href={`/work/${c.slug}`} className="link-underline text-[15px] text-bone">Read case study</Link>
                   </p>
                 </div>
-                <Link href={`/work/${c.slug}`} tabIndex={-1} aria-hidden="true" className="photo-zoom relative block aspect-[16/10] overflow-hidden rounded-[14px] bg-surface md:col-span-7">
+                <Link href={`/work/${c.slug}`} tabIndex={-1} aria-hidden="true" data-wipe className="photo-zoom relative block aspect-[16/10] overflow-hidden rounded-[14px] bg-surface md:col-span-7">
                   <Image src={c.image!} alt="" fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
                 </Link>
               </div>
@@ -246,12 +248,13 @@ export default function Home() {
       <section aria-labelledby="ch-05" className="border-t border-hairline">
         <div className="shell py-24 md:py-36">
           <Chapter id="ch-05" n="05" label="Why Techknock Labs" title="Why teams choose Techknock Labs" />
-          <ol className="mt-16 border-t border-hairline md:mt-24">
+          <ol data-stagger className="mt-16 grid gap-4 md:mt-24 md:grid-cols-6">
             {reasons.map((r, i) => (
-              <li key={r.title} className="grid gap-3 border-b border-hairline py-8 md:grid-cols-12 md:gap-8">
-                <p className="label tabular md:col-span-3">{String(i + 1).padStart(2, "0")}</p>
-                <h3 className="text-[26px] font-medium tracking-[-0.02em] text-bone md:col-span-4">{r.title}</h3>
-                <p className="max-w-[52ch] text-[16px] text-muted md:col-span-5">{r.body}</p>
+              <li key={r.title} className={`spot lift relative flex flex-col overflow-hidden rounded-[14px] border border-hairline bg-surface/70 p-7 hover:border-[#4a4640] md:p-8 ${["md:col-span-4", "md:col-span-2", "md:col-span-2", "md:col-span-2", "md:col-span-2"][i]}`}>
+                <span aria-hidden="true" className="spot-glow" />
+                <p className="label tabular flex items-center gap-2">{i === 0 ? <span className="pulse-dot" aria-hidden="true" /> : null}{String(i + 1).padStart(2, "0")}</p>
+                <h3 className={`mt-10 font-medium tracking-[-0.02em] text-bone ${i === 0 ? "text-[clamp(30px,3vw,44px)] leading-[1.08]" : "text-[24px] leading-[1.15]"}`}>{r.title}</h3>
+                <p className="mt-4 max-w-[52ch] text-[15px] text-muted">{r.body}</p>
               </li>
             ))}
           </ol>
@@ -294,7 +297,7 @@ export default function Home() {
       <section aria-labelledby="ch-09" className="border-t border-hairline">
         <div className="shell py-24 md:py-36">
           <Chapter id="ch-09" n="09" label="Free resources" title="Not ready to talk yet?" />
-          <ul className="mt-16 border-t border-hairline md:mt-24">
+          <ul data-stagger className="mt-16 border-t border-hairline md:mt-24">
             {resources.map((r) => (
               <li key={r.title} className="group relative grid gap-4 border-b border-hairline py-10 md:grid-cols-12 md:items-center md:gap-8">
                 <h3 className="text-[clamp(28px,3vw,44px)] font-medium leading-[1.1] tracking-[-0.03em] text-bone md:col-span-4 md:col-start-4">{r.title}</h3>

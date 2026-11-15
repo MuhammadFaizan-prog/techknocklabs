@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { DoorOpenCta, PageHero } from "@/components/Blocks";
-import { posts } from "@/content/site";
+import { coverFor, posts } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Blog: insights on AI, SaaS and building software",
@@ -26,6 +27,9 @@ export default function BlogPage() {
             Latest <span aria-hidden="true">/</span> {lead.category}
           </p>
           <div className="md:col-span-9">
+            <div className="cover-zoom relative mb-10 aspect-[16/9] overflow-hidden rounded-[14px] border border-hairline bg-surface md:aspect-[21/9]">
+              <Image src={coverFor(lead.category)} alt="" fill priority sizes="(min-width: 768px) 70vw, 100vw" className="object-cover" />
+            </div>
             <h2 className="display-serif max-w-[20ch] text-[clamp(44px,5.4vw,84px)] leading-[1] text-bone">
               <Link href={`/blog/${lead.slug}`} className="after:absolute after:inset-0 group-hover:text-white">{lead.title}</Link>
             </h2>
@@ -33,12 +37,17 @@ export default function BlogPage() {
             <p className="label mt-6"><time dateTime={lead.iso}>{lead.date}</time> <span aria-hidden="true">/</span> {lead.readTime}</p>
           </div>
         </article>
-        <ul className="border-t border-hairline">
+        <ul data-stagger className="border-t border-hairline">
           {rest.map((p) => (
-            <li key={p.slug} className="group relative grid gap-3 border-b border-hairline py-8 md:grid-cols-12 md:items-baseline md:gap-8">
-              <p className="label md:col-span-3">
-                <time dateTime={p.iso}>{p.date}</time> <span aria-hidden="true">/</span> {p.category}
-              </p>
+            <li key={p.slug} className="group relative grid gap-3 border-b border-hairline py-8 md:grid-cols-12 md:items-start md:gap-8">
+              <div className="md:col-span-3">
+                <div className="cover-zoom relative aspect-[16/9] overflow-hidden rounded-[10px] border border-hairline bg-surface">
+                  <Image src={coverFor(p.category)} alt="" fill sizes="(min-width: 768px) 22vw, 100vw" className="object-cover" />
+                </div>
+                <p className="label mt-4">
+                  <time dateTime={p.iso}>{p.date}</time> <span aria-hidden="true">/</span> {p.category}
+                </p>
+              </div>
               <h2 className="text-[clamp(22px,2.2vw,30px)] font-medium leading-[1.2] tracking-[-0.02em] text-bone md:col-span-6">
                 <Link href={`/blog/${p.slug}`} className="link-quiet after:absolute after:inset-0">{p.title}</Link>
               </h2>

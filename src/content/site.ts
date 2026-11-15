@@ -89,6 +89,15 @@ export const posts = (blogJson as unknown as Post[]).map((p) => ({
   // Their own article HTML; defensively drop any script tags.
   html: p.html.replace(/<script[\s\S]*?<\/script>/gi, ""),
 }));
+/** Generated cover art per category (official site has none; see DEVIATIONS.md). */
+export const categoryCovers: Record<string, string> = {
+  AI: "/img/blog/ai.webp",
+  Product: "/img/blog/product.webp",
+  Strategy: "/img/blog/strategy.webp",
+  SaaS: "/img/blog/saas.webp",
+  Engineering: "/img/blog/engineering.webp",
+};
+export const coverFor = (category: string) => categoryCovers[category] ?? categoryCovers.Engineering;
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
 
 // Short labels used on the home list (from the site's nav menu)

@@ -17,3 +17,17 @@ Review: same room/door/palette ✓, light floods out ✓, no text/people ✓. Ga
 
 Alt text: both are decorative (`alt=""`) because the headline carries the meaning.
 Superseded: earlier `door-ajar.png` / `door-open.png` (2026-11-12, project root) were replaced by v2 to follow the structured-prompt workflow.
+
+## Blog covers (2026-11-15) → public/img/blog/{ai,product,strategy,saas,engineering}.webp (1376×768, q82, 11-27 KB)
+Engine: Hark `generate_image`, one engine for the set, seeds not exposed. Originals: project root `blog-*.png`.
+Style lock (byte-identical in all five): `quiet dark architectural minimalism, single warm practical light source, cinematic film still, fine grain, low-key grade`
+Palette lock (all five): `walls and floor near-black #0A0A0A to charcoal #141414, hairline frame #2B2925, cool grey highlights #8E8B85, the only warm colour is the amber light #E8A24A`
+Shared closing constraint: `The scene contains no text, no lettering, no logos, no people, no watermark, no purple or blue tint, no lens flare.`
+
+- **AI**: tall flush matte black door slightly ajar; through the narrow gap a slim slit of warm amber light, and inside the gap a delicate network of small glowing nodes joined by thin luminous lines. Door gap right third, eye-level, 35mm, dark negative space left.
+- **Product**: a single small matte prototype block with fine engraved panel lines (a blueprint made solid) on polished dark concrete inside a thin wedge of amber light from a door gap at the right edge. Floor-level camera, 50mm, shallow DoF.
+- **Strategy**: minimal matte black chess-like pieces on a dark stone floor with faint inlaid grid paths, lit by a diagonal wedge of amber light from a slightly open door at far right. Low three-quarter camera, 50mm.
+- **SaaS**: four thin translucent smoked-glass slabs floating as stacked tiers, edges catching the amber slit of a narrow door gap behind them. Eye-level, 50mm.
+- **Engineering**: two interlocking machined steel gears, a bearing ring and a threaded shaft on dark concrete inside a thin wedge of amber light from a door gap at the right edge. Low camera, 85mm macro-like.
+
+Review (read at 800px): all five on-palette, amber only as light, no text/people/logos. Strategy original had a thin light border frame; cropped 14/10 px per side and resized back. Accepted on try 1. Alt text: decorative (`alt=""`), the card title carries the meaning.
